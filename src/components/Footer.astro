@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/TheraNode_Logo.png';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <Image src={logo} alt="TheraNode" width={32} height={32} class="footer-logo" />
+        <span class="footer-wordmark">TheraNode</span>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; {year} TheraNode. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        Disclaimer: TheraNode is a self-monitoring tool and not a substitute for professional medical advice, diagnosis, or treatment.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--sage-900);
+    color: rgba(255,255,255,0.7);
+    padding: 48px 0 32px;
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 10px; }
+  .footer-logo { border-radius: 6px; }
+  .footer-wordmark { font-size: 18px; font-weight: 700; color: #fff; }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    transition: color var(--transition);
+  }
+  .footer-links a:hover { color: var(--primary); }
+  .footer-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 32px 0 24px;
+  }
+  .footer-bottom { display: flex; flex-direction: column; gap: 8px; }
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
+  .footer-disclaimer { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.5; max-width: 640px; }
+  @media (max-width: 600px) {
+    .footer-top { flex-direction: column; align-items: flex-start; }
+  }
+</style>

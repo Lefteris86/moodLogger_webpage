@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+import img1 from '../assets/img_analytics1.jpg';
+import img2 from '../assets/img_analytics2.jpg';
+import img3 from '../assets/img_analytics3.jpg';
+import img4 from '../assets/img_analytics4.jpg';
+import imgAuth from '../assets/img_auth.jpg';
+
+const screens = [
+  { img: img1, alt: "Weekly Well-being Average score and radar chart", label: "Weekly Analytics" },
+  { img: img2, alt: "Sleep vs Stress balance chart and Inner Balance tracker", label: "Sleep & Stress" },
+  { img: img3, alt: "Mood vs Energy correlation bar chart with emoji snapshot", label: "Mood Patterns" },
+  { img: img4, alt: "Tag impact analysis and PDF export button", label: "Smart Insights" },
+  { img: imgAuth, alt: "Secure PIN entry with biometric login", label: "Secure Access" },
+];
+---
+
+<section class="screenshots" id="screenshots">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">App Preview</span>
+      <h2>See TheraNode in Action</h2>
+      <p>Real screenshots from the application — no mockups, no placeholders.</p>
+    </div>
+    <div class="screenshot-scroll">
+      <div class="screenshot-track">
+        {screens.map((s, i) => (
+          <div class={`screenshot-item reveal reveal-delay-${(i % 3) + 1}`}>
+            <div class="screenshot-phone">
+              <Image src={s.img} alt={s.alt} width={260} height={520} class="screenshot-img" />
+            </div>
+            <span class="screenshot-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .screenshots { padding: 100px 0; background: var(--bg-alt); }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sage-500);
+    margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .screenshot-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sage-300) transparent;
+    padding-bottom: 16px;
+  }
+  .screenshot-track {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    min-width: min-content;
+    padding: 0 24px;
+  }
+  .screenshot-item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .screenshot-phone {
+    width: 220px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 6px solid var(--sage-200);
+    box-shadow: 0 16px 48px rgba(30,41,59,0.10);
+    background: #fff;
+    transition: all var(--transition);
+  }
+  .screenshot-phone:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 24px 56px rgba(30,41,59,0.15);
+  }
+  .screenshot-img { width: 100%; height: auto; display: block; }
+  .screenshot-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sage-600);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 900px) {
+    .screenshot-track { justify-content: flex-start; }
+  }
+</style>

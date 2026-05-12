@@ -1,0 +1,108 @@
+---
+---
+
+<section class="privacy" id="privacy">
+  <div class="privacy-glow-left"></div>
+  <div class="privacy-glow-right"></div>
+  <div class="container privacy-inner">
+    <div class="reveal">
+      <span class="material-symbols-outlined privacy-shield">shield_lock</span>
+      <h2>Zero Cloud. Zero Tracking.<br/>Zero Compromise.</h2>
+      <p class="privacy-sub">
+        We believe your mental health data is the most sensitive information you own.
+        That's why TheraNode operates fundamentally differently from other wellness apps.
+      </p>
+    </div>
+    <div class="privacy-cards">
+      <div class="privacy-card reveal reveal-delay-1">
+        <span class="material-symbols-outlined">wifi_off</span>
+        <h4>No Internet Required</h4>
+        <p>The app functions perfectly offline. Your data never transmits anywhere.</p>
+      </div>
+      <div class="privacy-card reveal reveal-delay-2">
+        <span class="material-symbols-outlined">person_off</span>
+        <h4>No Accounts</h4>
+        <p>Skip the sign-up. There is no central database linking you to your logs.</p>
+      </div>
+      <div class="privacy-card reveal reveal-delay-3">
+        <span class="material-symbols-outlined">block</span>
+        <h4>No Analytics</h4>
+        <p>We don't use third-party trackers to monitor how you use the app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .privacy {
+    position: relative;
+    padding: 100px 0;
+    background: var(--sage-800);
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+  }
+  .privacy-glow-left, .privacy-glow-right {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .privacy-glow-left { top: -100px; left: -100px; background: var(--primary); }
+  .privacy-glow-right { bottom: -100px; right: -100px; background: var(--sage-400); }
+  .privacy-shield { font-size: 48px; color: var(--primary); margin-bottom: 20px; }
+  .privacy h2 {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .privacy-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 580px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+  .privacy-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .privacy-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    backdrop-filter: blur(8px);
+    text-align: left;
+    transition: all var(--transition);
+  }
+  .privacy-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+  }
+  .privacy-card .material-symbols-outlined {
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  .privacy-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .privacy-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .privacy-cards { grid-template-columns: 1fr; max-width: 400px; }
+  }
+</style>

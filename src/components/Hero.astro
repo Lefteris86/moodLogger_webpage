@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+import mainImg from '../assets/img_main.jpg';
+---
+
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-content reveal">
+      <div class="hero-badge">
+        <span class="material-symbols-outlined">verified_user</span>
+        100% On-Device Privacy
+      </div>
+      <h1>Your Mental Health Journey,<br/><span class="hero-accent">Completely Private.</span></h1>
+      <p class="hero-sub">
+        Bridge the gap between therapy sessions with clinically-informed algorithms
+        that identify patterns across mood, energy, and 23 behavioral indicators.
+        Share professional reports with your therapist — while keeping your data
+        entirely in your hands.
+      </p>
+      <div class="hero-actions">
+        <a href="#features" class="btn-primary">Explore Features</a>
+        <a href="#screenshots" class="btn-outline">See the App</a>
+      </div>
+    </div>
+    <div class="hero-phone reveal reveal-delay-2">
+      <div class="phone-frame">
+        <Image src={mainImg} alt="TheraNode daily logging screen with mood, stress, and energy sliders" width={320} height={640} class="phone-screen" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: 80px 0 100px;
+    overflow: hidden;
+    background: linear-gradient(175deg, #fff 0%, var(--sage-50) 50%, var(--bg-alt) 100%);
+  }
+  .hero-bg-glow {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(144,193,167,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage-100);
+    color: var(--primary-dark);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+  }
+  .hero-badge .material-symbols-outlined { font-size: 16px; }
+  h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+  .hero-accent { color: var(--primary-dark); }
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: var(--primary-dark);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all var(--transition);
+  }
+  .btn-primary:hover { background: var(--sage-700); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(57,103,82,0.25); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    border: 1.5px solid var(--sage-300);
+    color: var(--text-primary);
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all var(--transition);
+  }
+  .btn-outline:hover { border-color: var(--primary-dark); color: var(--primary-dark); }
+
+  .hero-phone { display: flex; justify-content: center; }
+  .phone-frame {
+    position: relative;
+    width: 280px;
+    border-radius: 32px;
+    overflow: hidden;
+    border: 8px solid var(--sage-200);
+    box-shadow: 0 24px 64px rgba(30,41,59,0.12), 0 0 0 1px rgba(107,135,120,0.08);
+    background: #fff;
+  }
+  .phone-screen { width: 100%; height: auto; display: block; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-phone { order: -1; }
+    .phone-frame { width: 240px; }
+    .hero-bg-glow { top: -60px; right: -120px; width: 300px; height: 300px; }
+  }
+</style>

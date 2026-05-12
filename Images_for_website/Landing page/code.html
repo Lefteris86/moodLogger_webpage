@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TheraNode - Your Mental Health Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "secondary-fixed": "#d4e8d2",
+                            "on-error": "#ffffff",
+                            "on-tertiary-fixed": "#052015",
+                            "surface-container-low": "#f0f3ff",
+                            "surface-container-lowest": "#ffffff",
+                            "on-surface": "#111c2d",
+                            "surface-container": "#e7eeff",
+                            "surface-tint": "#396752",
+                            "on-surface-variant": "#414943",
+                            "on-primary-fixed": "#002114",
+                            "background": "#f9f9ff",
+                            "tertiary-fixed-dim": "#b0cdbc",
+                            "surface-container-high": "#dee8ff",
+                            "on-secondary-fixed-variant": "#3a4b3b",
+                            "inverse-on-surface": "#ecf1ff",
+                            "secondary-container": "#d4e8d2",
+                            "on-error-container": "#93000a",
+                            "inverse-primary": "#a0d1b7",
+                            "outline": "#717973",
+                            "secondary": "#516352",
+                            "secondary-fixed-dim": "#b8ccb7",
+                            "tertiary": "#496456",
+                            "surface-bright": "#f9f9ff",
+                            "on-primary-container": "#21503c",
+                            "on-secondary-fixed": "#0f1f12",
+                            "inverse-surface": "#263143",
+                            "primary-fixed-dim": "#a0d1b7",
+                            "on-background": "#111c2d",
+                            "tertiary-container": "#a0bdad",
+                            "on-primary": "#ffffff",
+                            "on-tertiary-fixed-variant": "#324c3f",
+                            "tertiary-fixed": "#cbead8",
+                            "outline-variant": "#c0c9c2",
+                            "surface-container-highest": "#d8e3fb",
+                            "primary": "#396752",
+                            "on-primary-fixed-variant": "#204f3b",
+                            "on-tertiary": "#ffffff",
+                            "error-container": "#ffdad6",
+                            "on-tertiary-container": "#334d40",
+                            "on-secondary": "#ffffff",
+                            "surface": "#f9f9ff",
+                            "primary-container": "#90c1a7",
+                            "error": "#ba1a1a",
+                            "surface-variant": "#d8e3fb",
+                            "on-secondary-container": "#576958",
+                            "primary-fixed": "#bbeed2",
+                            "surface-dim": "#cfdaf2"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "container-padding": "20px",
+                            "section-gap": "32px",
+                            "unit": "4px",
+                            "stack-gap": "16px",
+                            "card-inner-padding": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-sm": ["Lexend"],
+                            "label-md": ["Lexend"],
+                            "headline-lg": ["Lexend"],
+                            "headline-md": ["Lexend"],
+                            "body-md": ["Lexend"],
+                            "body-lg": ["Lexend"],
+                            "data-display": ["Lexend"]
+                    },
+                    "fontSize": {
+                            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "data-display": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden">
+<!-- Navigation -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md text-primary dark:text-primary-fixed docked full-width top-0 sticky z-50 border-b border-outline-variant/30 flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto flat no shadows">
+<div class="flex items-center gap-2">
+<img alt="TheraNode Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhrvjmN6C4ZiYYZj3fSZeDdH3BV8Ko-SZw5SverYp8jnAphLX3ayds9aeqLi35xUJ3UEl_AsxuORoymQYVtnhIdvrV9l0lNH4CCjM3wjtNTnqRIzDkDLAAMICY1YuD0VOolsRz34AcJHrCOI_exZZXHo5cPXXoXGh1WNzEJqX9FvVfZxuqvcKswbaD1CDVc0zA7671GHNKg2Ltb7ktUE_yYz4IXIPvTxWfYKW9NBnS4DMqA28Id1Jx-fcQIzThIEUyx32HGfzLCVQ"/>
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">TheraNode</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors text-label-md font-label-md" href="#">Features</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors text-label-md font-label-md" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors text-label-md font-label-md" href="#">FAQ</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-full text-label-md font-label-md font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+            Learn More
+        </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-20 pb-24 overflow-hidden bg-gradient-to-b from-surface-container-lowest to-surface-container-low px-container-padding">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 space-y-6 text-center lg:text-left z-10">
+<h1 class="text-headline-lg font-headline-lg text-on-surface lg:text-[42px] lg:leading-[50px]">
+                    Your Mental Health Journey,<br/>Completely Private.
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">Bridge the gap between therapy sessions with high-end algorithms that identify valuable patterns across mood, energy, and numerous other indicators. TheraNode is an invaluable tool for providing both you and your therapist with a comprehensive, all-around mental health image that would otherwise be difficult to identify.</p>
+<div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+<button class="bg-transparent border border-outline text-on-surface px-8 py-3.5 rounded-full text-body-md font-body-md font-semibold hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+                        View Sample Report
+                    </button>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-md font-label-md h-fit self-center"><span class="material-symbols-outlined text-[16px]">verified_user</span>100% On-Device Privacy</div></div>
+</div>
+<div class="flex-1 w-full max-w-md relative z-10">
+<div class="relative rounded-[2rem] overflow-hidden border-[8px] border-surface-container-highest shadow-[0_20px_40px_rgba(30,41,59,0.08)] bg-white">
+<img alt="TheraNode daily logging interface showing sliders for Energy, Sleep, Irritability, and Self-Worth" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida/ADBb0uhPHikl0mIV2j-t7IY0Au6-Dyc-LsLsu3jGmc8ddsVny20ApZW7pO6ZsYq7AZo8tXJUgcJqiO6sZtkylf-WVFfLsqr9ngrj-soMbKf06JaKyOpS2q8YR7MRXajdbucQNSdWRDa_n7EyJ6afTKSmws48PM4xTU5FzW6FMIwJjOfUyj1QYRiJnU9FoBRLEo3tegkZPTufyg-xmEpt9BJ48cL-rKQ5oDdnTcAYMAZ1qw_fleft3olyw1wRcfTyhsjT3SLWCwHVePHIGdc"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-fixed rounded-full blur-3xl opacity-50 -z-10"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-fixed rounded-full blur-3xl opacity-50 -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Three Pillars -->
+<section class="py-24 px-container-padding bg-surface-bright">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-headline-md font-headline-md text-on-surface">Designed for Professional-Grade Precision</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Built on established evidence-based frameworks to provide actionable insights for you and your therapist.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_12px_rgba(30,41,59,0.03)] border border-outline-variant/20 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center mb-6 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">AES-256 Encrypted</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">All data stored locally on your device. Never uploaded. Your thoughts remain exclusively yours.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_12px_rgba(30,41,59,0.03)] border border-outline-variant/20 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-6 text-on-primary-container">
+<span class="material-symbols-outlined text-3xl">bar_chart</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">23 Precision Indicators</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Standard and Advanced tracking modes for real insight into your behavioral patterns and triggers.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_12px_rgba(30,41,59,0.03)] border border-outline-variant/20 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed flex items-center justify-center mb-6 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">Professional PDF Reports</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Shareable weekly summaries designed specifically for therapist review and session planning.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy Promise -->
+<section class="py-24 px-container-padding bg-on-surface-variant text-white relative overflow-hidden">
+<!-- Abstract Background Elements -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-20 translate-x-1/3 -translate-y-1/3"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full blur-[120px] opacity-20 -translate-x-1/3 translate-y-1/3"></div>
+<div class="max-w-4xl mx-auto relative z-10 text-center">
+<span class="material-symbols-outlined text-5xl text-primary-fixed mb-6">shield_lock</span>
+<h2 class="text-headline-lg font-headline-lg mb-8 text-white">Zero Cloud. Zero Tracking. Zero Compromise.</h2>
+<p class="text-body-lg font-body-lg text-surface-variant mb-12 max-w-2xl mx-auto">
+                We believe your mental health data is the most sensitive information you own. That's why TheraNode operates fundamentally differently from other wellness apps.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+<div class="bg-surface-variant/10 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed mb-3">wifi_off</span>
+<h4 class="text-headline-sm font-headline-sm text-white mb-2">No Internet Required</h4>
+<p class="text-body-md font-body-md text-surface-variant/80">The app functions perfectly offline. Your data never transmits anywhere.</p>
+</div>
+<div class="bg-surface-variant/10 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed mb-3">person_off</span>
+<h4 class="text-headline-sm font-headline-sm text-white mb-2">No Accounts</h4>
+<p class="text-body-md font-body-md text-surface-variant/80">Skip the sign-up. There is no central database linking you to your logs.</p>
+</div>
+<div class="bg-surface-variant/10 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed mb-3">block</span>
+<h4 class="text-headline-sm font-headline-sm text-white mb-2">No Analytics</h4>
+<p class="text-body-md font-body-md text-surface-variant/80">We don't use third-party trackers to monitor how you use the app.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-container-padding bg-surface">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-headline-md font-headline-md text-on-surface">Common Questions</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(30,41,59,0.03)] border border-outline-variant/20 p-6">
+<div class="flex justify-between items-center cursor-pointer">
+<h3 class="text-data-display font-data-display text-on-surface">How do I share my data with my therapist?</h3>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+<!-- FAQ Item 2 (Expanded State for demo) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(30,41,59,0.03)] border border-primary/30 p-6 ring-1 ring-primary/10">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-data-display font-data-display text-primary">What happens if I lose my phone?</h3>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                        Because TheraNode stores data entirely on-device, losing your phone means losing your data unless you have performed a manual, encrypted backup. We provide tools to securely export and save your encrypted files to your preferred storage solution.
+                    </p>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(30,41,59,0.03)] border border-outline-variant/20 p-6">
+<div class="flex justify-between items-center cursor-pointer">
+<h3 class="text-data-display font-data-display text-on-surface">Is TheraNode a substitute for professional therapy?</h3>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-12 max-w-7xl mx-auto full-width rounded-t-xl flat no shadows">
+<div class="col-span-1 md:col-span-2 lg:col-span-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-outline-variant/30 pb-8">
+<div class="flex items-center gap-2">
+<img alt="TheraNode Logo" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhrvjmN6C4ZiYYZj3fSZeDdH3BV8Ko-SZw5SverYp8jnAphLX3ayds9aeqLi35xUJ3UEl_AsxuORoymQYVtnhIdvrV9l0lNH4CCjM3wjtNTnqRIzDkDLAAMICY1YuD0VOolsRz34AcJHrCOI_exZZXHo5cPXXoXGh1WNzEJqX9FvVfZxuqvcKswbaD1CDVc0zA7671GHNKg2Ltb7ktUE_yYz4IXIPvTxWfYKW9NBnS4DMqA28Id1Jx-fcQIzThIEUyx32HGfzLCVQ"/>
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed">TheraNode</span>
+</div>
+<div class="flex flex-wrap gap-6">
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:underline transition-all" href="#">Contact Support</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:underline transition-all" href="#">Professional Data Study</a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2 lg:col-span-4 mt-2 text-label-md font-label-md text-on-surface-variant/70">© 2024 TheraNode. Disclaimer: TheraNode is a self-monitoring tool and not a substitute for professional medical advice, diagnosis, or treatment.</div>
+</footer>
+</body></html>

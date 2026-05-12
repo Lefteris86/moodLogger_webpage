@@ -1,0 +1,115 @@
+---
+const pillars = [
+  {
+    icon: "lock",
+    title: "AES-256 Encrypted",
+    desc: "All data stored locally on your device using medical-grade encryption. Never uploaded. Your thoughts remain exclusively yours.",
+    color: "var(--sage-100)",
+    iconColor: "var(--primary-dark)"
+  },
+  {
+    icon: "bar_chart",
+    title: "23 Clinical Indicators",
+    desc: "Standard and Advanced tracking modes provide real insight into behavioral patterns, triggers, and cognitive trends.",
+    color: "rgba(144,193,167,0.2)",
+    iconColor: "var(--sage-500)"
+  },
+  {
+    icon: "description",
+    title: "Professional PDF Reports",
+    desc: "Shareable weekly summaries with Masking Index, Pearson correlations, and Safety Velocity — designed for therapist review.",
+    color: "rgba(16,185,129,0.1)",
+    iconColor: "var(--accent)"
+  }
+];
+---
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why TheraNode</span>
+      <h2>Designed for Professional-Grade Precision</h2>
+      <p>Built on evidence-based frameworks to provide actionable insights for you and your therapist.</p>
+    </div>
+    <div class="pillars-grid">
+      {pillars.map((p, i) => (
+        <div class={`pillar-card reveal reveal-delay-${i + 1}`}>
+          <div class="pillar-icon" style={`background: ${p.color}; color: ${p.iconColor}`}>
+            <span class="material-symbols-outlined">{p.icon}</span>
+          </div>
+          <h3>{p.title}</h3>
+          <p>{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features { padding: 100px 0; background: var(--bg); }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sage-500);
+    margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .pillar-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    transition: all var(--transition);
+  }
+  .pillar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--sage-300);
+  }
+  .pillar-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+  .pillar-icon .material-symbols-outlined { font-size: 28px; }
+  .pillar-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .pillar-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  @media (max-width: 768px) {
+    .pillars-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  }
+</style>

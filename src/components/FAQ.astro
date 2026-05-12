@@ -1,0 +1,125 @@
+---
+const faqs = [
+  {
+    q: "How do I share my data with my therapist?",
+    a: "TheraNode generates professional PDF reports you can export with one tap. Use the \"Export Detailed PDF Report\" button on the Analytics screen to share via email, Google Drive, or any method you prefer. Your therapist receives a clinical-grade summary without needing the app."
+  },
+  {
+    q: "What happens if I lose my phone or get a new device?",
+    a: "You can securely move your data using Encrypted Backup & Restore. On your old phone, create an encrypted .theranode backup file with a password. Transfer it to your new device, install TheraNode, and restore during setup. Your entire history will be recovered."
+  },
+  {
+    q: "Is TheraNode a substitute for professional therapy?",
+    a: "No. TheraNode is a personal wellness companion and is not a medical device. It does not provide clinical diagnoses. Always consult a qualified healthcare professional for medical advice. TheraNode is designed to complement — not replace — your therapeutic relationship."
+  },
+  {
+    q: "What happens if I forget my PIN?",
+    a: "You can reset your PIN using your Security Answer (the secret answer you set during onboarding). Tapping \"Forgot PIN?\" on the login screen will prompt you for this answer. However, if you lose both your PIN and your Security Answer, your data is permanently encrypted and cannot be recovered."
+  },
+  {
+    q: "Does TheraNode sync my data to a cloud or backup service?",
+    a: "No. TheraNode is designed for absolute privacy. All data is stored 100% locally on your device. It is never uploaded to the cloud or synced to any servers, meaning your data stays entirely in your hands and off the internet."
+  },
+  {
+    q: "Why can't I see my report until next week?",
+    a: "TheraNode strictly locks the current week's report until the week has fully concluded (Monday morning). This is a deliberate clinical design to prevent score-gaming. By making reports available only after the week has ended, TheraNode guarantees that every entry is honest and uninfluenced."
+  }
+];
+---
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Support</span>
+      <h2>Common Questions</h2>
+      <p>Everything you need to know about using TheraNode.</p>
+    </div>
+    <div class="faq-list">
+      {faqs.map((item, i) => (
+        <div class={`faq-item reveal reveal-delay-${(i % 3) + 1}`} data-faq>
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">{item.q}</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            <p>{item.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq { padding: 100px 0; background: var(--bg); }
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sage-500);
+    margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+  }
+  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  .faq-item:hover { border-color: var(--sage-300); }
+  .faq-item.open { border-color: rgba(57,103,82,0.25); box-shadow: 0 2px 12px rgba(57,103,82,0.06); }
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+  }
+  .faq-question {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+  .faq-item.open .faq-question { color: var(--primary-dark); }
+  .faq-chevron {
+    font-size: 22px;
+    color: var(--text-muted);
+    transition: transform var(--transition), color var(--transition);
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--primary-dark); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; }
+  .faq-answer p {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/TheraNode_Logo.png';
+---
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-brand">
+      <Image src={logo} alt="TheraNode Logo" width={36} height={36} class="nav-logo" />
+      <span class="nav-wordmark">TheraNode</span>
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#screenshots">App Preview</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <a href="#features" class="nav-cta">Learn More</a>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(246, 247, 248, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+    transition: box-shadow var(--transition);
+  }
+  .navbar.scrolled { box-shadow: 0 2px 20px rgba(30,41,59,0.06); }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logo { border-radius: 8px; }
+  .nav-wordmark {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--primary-dark); }
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--primary-dark);
+    padding: 10px 24px;
+    border-radius: 100px;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .nav-cta:hover { background: var(--sage-700); transform: translateY(-1px); }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--card);
+      padding: 24px;
+      gap: 20px;
+      border-bottom: 1px solid var(--card-border);
+      box-shadow: var(--shadow-card);
+    }
+  }
+</style>

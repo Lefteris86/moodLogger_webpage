@@ -1,11 +1,65 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Privacy from '../components/Privacy.astro';
+import Screenshots from '../components/Screenshots.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <Navbar />
+  <Hero />
+  <Features />
+  <Privacy />
+  <Screenshots />
+  <FAQ />
+  <Footer />
 </Layout>
+
+<script>
+  // ── Scroll Reveal via Intersection Observer ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Navbar scroll shadow ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // ── Mobile hamburger toggle ──
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger?.addEventListener('click', () => {
+    navLinks?.classList.toggle('open');
+  });
+  // Close mobile menu when a link is clicked
+  navLinks?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks?.classList.remove('open'));
+  });
+
+  // ── FAQ Accordion ──
+  document.querySelectorAll('[data-faq]').forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    trigger?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      // Close all others
+      document.querySelectorAll('[data-faq]').forEach(other => other.classList.remove('open'));
+      // Toggle current
+      if (!isOpen) item.classList.add('open');
+      // Update aria
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+</script>
