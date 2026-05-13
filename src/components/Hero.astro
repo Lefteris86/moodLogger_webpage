@@ -1,6 +1,13 @@
 ---
 import { Image } from 'astro:assets';
-import mainImg from '../assets/img_main.webp';
+import imgAuth from '../assets/img_auth.webp';
+import imgMain from '../assets/img_main.webp';
+import imgTextbox from '../assets/img_textbox.webp';
+import imgInfo from '../assets/img_info.webp';
+import imgAnalytics from '../assets/img_analytics1.webp';
+import imgOverall from '../assets/overall_analytics.webp';
+import imgSplash from '../assets/img_splashscreen.webp';
+import imgEmergency from '../assets/img_emergency popup B.webp';
 ---
 
 <section class="hero">
@@ -23,9 +30,34 @@ import mainImg from '../assets/img_main.webp';
         <a href="#screenshots" class="btn-outline">See the App</a>
       </div>
     </div>
-    <div class="hero-phone reveal reveal-delay-2">
-      <div class="phone-frame">
-        <Image src={mainImg} alt="TheraNode daily logging screen with mood, stress, and energy sliders" width={320} height={640} class="phone-screen" loading="eager" />
+    <div class="hero-carousel reveal reveal-delay-2">
+      <div class="carousel-container">
+        <div class="carousel-spinner" id="hero-spinner">
+          <div class="carousel-panel" style="--i: 0;">
+            <div class="phone-frame"><Image src={imgAuth} alt="TheraNode biometric login" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 1;">
+            <div class="phone-frame"><Image src={imgMain} alt="TheraNode daily logging" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 2;">
+            <div class="phone-frame"><Image src={imgTextbox} alt="TheraNode contextual notes" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 3;">
+            <div class="phone-frame"><Image src={imgInfo} alt="TheraNode indicator details" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 4;">
+            <div class="phone-frame"><Image src={imgAnalytics} alt="TheraNode weekly analytics" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 5;">
+            <div class="phone-frame"><Image src={imgOverall} alt="TheraNode all time trends" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 6;">
+            <div class="phone-frame"><Image src={imgSplash} alt="TheraNode splash screen" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+          <div class="carousel-panel" style="--i: 7;">
+            <div class="phone-frame"><Image src={imgEmergency} alt="TheraNode emergency contact" width={280} height={560} class="phone-screen" loading="eager" /></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -110,24 +142,82 @@ import mainImg from '../assets/img_main.webp';
   }
   .btn-outline:hover { border-color: var(--primary-dark); color: var(--primary-dark); }
 
-  .hero-phone { display: flex; justify-content: center; }
+  .hero-carousel {
+    display: flex;
+    justify-content: center;
+    perspective: 1200px;
+    z-index: 10;
+  }
+  .carousel-container {
+    width: 260px;
+    height: 540px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: scale(0.95); /* Shrinks the carousel so it doesn't cover text */
+    transform-origin: center right; /* Keeps it anchored to the right side */
+  }
+  .carousel-spinner {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  .carousel-panel {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 360deg / 8 panels = 45deg. TranslateZ dictates circle radius (space between items). */
+    transform: rotateY(calc(var(--i) * -45deg)) translateZ(280px);
+  }
+
   .phone-frame {
     position: relative;
-    width: 280px;
+    width: 100%;
+    height: 100%;
     border-radius: 32px;
     overflow: hidden;
     border: 8px solid var(--sage-200);
     box-shadow: 0 24px 64px rgba(30,41,59,0.12), 0 0 0 1px rgba(107,135,120,0.08);
     background: #fff;
+    /* Optional backface visibility to hide cards in the back */
+    /* backface-visibility: hidden; */
   }
-  .phone-screen { width: 100%; height: auto; display: block; }
+  .phone-screen { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin-bottom: -4%; /* Crop Android nav bar */
+  }
 
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; text-align: center; }
     .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
-    .hero-phone { order: -1; }
-    .phone-frame { width: 240px; }
+    
+    .hero-carousel { order: -1; margin-bottom: 24px; margin-top: 24px; }
+    .carousel-container { transform: scale(0.7); transform-origin: center center; }
     .hero-bg-glow { top: -60px; right: -120px; width: 300px; height: 300px; }
   }
 </style>
+
+<script>
+  // Continuous 3D Carousel Rotation
+  const spinner = document.getElementById('hero-spinner');
+  if (spinner) {
+    let angle = 0;
+    const speed = 0.25; // Rotation speed in degrees per frame
+    
+    function animate() {
+      angle += speed;
+      // Wrap angle to prevent float precision issues over long periods
+      if (angle >= 360) angle -= 360;
+      spinner.style.transform = `rotateY(${angle}deg)`;
+      requestAnimationFrame(animate);
+    }
+    
+    // Start animation
+    requestAnimationFrame(animate);
+  }
+</script>
