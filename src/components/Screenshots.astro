@@ -1,17 +1,23 @@
 ---
 import { Image } from 'astro:assets';
+import imgMain from '../assets/img_main.jpg';
 import img1 from '../assets/img_analytics1.jpg';
 import img2 from '../assets/img_analytics2.jpg';
 import img3 from '../assets/img_analytics3.jpg';
 import img4 from '../assets/img_analytics4.jpg';
+import imgOverall from '../assets/overall_analytics.jpg';
+import imgExport from '../assets/save therapist pdf report options.jpg';
 import imgAuth from '../assets/img_auth.jpg';
 
 const screens = [
-  { img: img1, alt: "Weekly Well-being Average score and radar chart", label: "Weekly Analytics" },
+  { img: imgMain, alt: "TheraNode daily logging screen with mood, stress, and energy sliders", label: "Daily Logging" },
+  { img: img1, alt: "Weekly well-being average score with radar chart and week-at-a-glance stats", label: "Weekly Analytics" },
   { img: img2, alt: "Sleep vs Stress balance chart and Inner Balance tracker", label: "Sleep & Stress" },
-  { img: img3, alt: "Mood vs Energy correlation bar chart with emoji snapshot", label: "Mood Patterns" },
-  { img: img4, alt: "Tag impact analysis and PDF export button", label: "Smart Insights" },
-  { img: imgAuth, alt: "Secure PIN entry with biometric login", label: "Secure Access" },
+  { img: img3, alt: "Mood vs Energy correlation bar chart with weekly emoji snapshot", label: "Mood Patterns" },
+  { img: img4, alt: "Tag impact analysis, trend insights, and PDF export button", label: "Smart Insights" },
+  { img: imgOverall, alt: "All-time trends showing well-being, mood, stress, and motivation across weeks", label: "All-Time Trends" },
+  { img: imgExport, alt: "Share exported PDF file menu with email therapist, share via OS, and save options", label: "Therapist Export" },
+  { img: imgAuth, alt: "Secure PIN entry with biometric fingerprint login", label: "Secure Access" },
 ];
 ---
 
@@ -34,6 +40,10 @@ const screens = [
         ))}
       </div>
     </div>
+    <p class="scroll-hint reveal">
+      <span class="material-symbols-outlined">swipe_left</span>
+      Swipe to see more screens
+    </p>
   </div>
 </section>
 
@@ -41,69 +51,38 @@ const screens = [
   .screenshots { padding: 100px 0; background: var(--bg-alt); }
   .section-header { text-align: center; margin-bottom: 60px; }
   .section-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--sage-500);
-    margin-bottom: 12px;
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
   }
   .section-header h2 {
-    font-size: clamp(24px, 3.5vw, 34px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    margin-bottom: 12px;
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
   }
-  .section-header p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    max-width: 480px;
-    margin: 0 auto;
-  }
+  .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; }
   .screenshot-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--sage-300) transparent;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; scrollbar-color: var(--sage-300) transparent;
     padding-bottom: 16px;
   }
   .screenshot-track {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    min-width: min-content;
-    padding: 0 24px;
+    display: flex; gap: 28px; min-width: min-content; padding: 0 24px;
   }
-  .screenshot-item {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
+  .screenshot-item { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .screenshot-phone {
-    width: 220px;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 6px solid var(--sage-200);
-    box-shadow: 0 16px 48px rgba(30,41,59,0.10);
-    background: #fff;
-    transition: all var(--transition);
+    width: 220px; border-radius: 24px; overflow: hidden;
+    border: 6px solid var(--sage-200); box-shadow: 0 16px 48px rgba(30,41,59,0.10);
+    background: #fff; transition: all var(--transition);
   }
-  .screenshot-phone:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 24px 56px rgba(30,41,59,0.15);
-  }
+  .screenshot-phone:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 24px 56px rgba(30,41,59,0.15); }
   .screenshot-img { width: 100%; height: auto; display: block; }
-  .screenshot-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--sage-600);
-    letter-spacing: 0.02em;
+  .screenshot-label { font-size: 13px; font-weight: 600; color: var(--sage-600); letter-spacing: 0.02em; }
+  .scroll-hint {
+    text-align: center; margin-top: 24px; font-size: 13px; color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center; gap: 6px;
   }
-  @media (max-width: 900px) {
-    .screenshot-track { justify-content: flex-start; }
+  .scroll-hint .material-symbols-outlined { font-size: 18px; }
+  @media (min-width: 1400px) {
+    .screenshot-track { justify-content: center; }
+    .scroll-hint { display: none; }
   }
 </style>

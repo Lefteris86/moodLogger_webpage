@@ -1,0 +1,100 @@
+---
+const steps = [
+  {
+    num: "01",
+    icon: "edit_note",
+    title: "Log Your Day",
+    desc: "Rate 8 core indicators in Standard Mode, or unlock 23 in-depth indicators in Advanced Mode. Add contextual tags like #Work or #Family to track triggers. Log as many times per day as you need.",
+    color: "var(--sage-100)",
+    iconColor: "var(--primary-dark)"
+  },
+  {
+    num: "02",
+    icon: "insights",
+    title: "See Your Patterns",
+    desc: "After each week concludes, TheraNode generates a comprehensive analytics dashboard with trend charts, radar profiles, mood snapshots, and behavioral correlations — all calculated locally on your device.",
+    color: "rgba(144,193,167,0.2)",
+    iconColor: "var(--sage-500)"
+  },
+  {
+    num: "03",
+    icon: "share",
+    title: "Share with Your Therapist",
+    desc: "Export a detailed PDF report with one tap. Email it directly to your therapist, share via WhatsApp, or save it securely to your device. All exports are generated locally — we never see them.",
+    color: "rgba(16,185,129,0.1)",
+    iconColor: "var(--accent)"
+  }
+];
+---
+
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2>Three Steps to Better Insight</h2>
+      <p>TheraNode bridges the gap between therapy sessions with a simple daily workflow.</p>
+    </div>
+    <div class="steps-grid">
+      {steps.map((s, i) => (
+        <div class={`step-card reveal reveal-delay-${i + 1}`}>
+          <div class="step-num">{s.num}</div>
+          <div class="step-icon" style={`background: ${s.color}; color: ${s.iconColor}`}>
+            <span class="material-symbols-outlined">{s.icon}</span>
+          </div>
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="steps-connector" aria-hidden="true">
+      <div class="connector-line"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works { padding: 100px 0; background: var(--bg-alt); position: relative; }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-label {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
+  }
+  .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; z-index: 1; }
+  .step-card {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius-lg);
+    padding: 40px 28px; text-align: center; position: relative; transition: all var(--transition);
+  }
+  .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--sage-300); }
+  .step-num {
+    position: absolute; top: 16px; right: 20px; font-size: 48px; font-weight: 800;
+    color: var(--sage-100); letter-spacing: -0.04em; line-height: 1; user-select: none;
+  }
+  .step-icon {
+    width: 64px; height: 64px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; margin: 0 auto 24px;
+  }
+  .step-icon .material-symbols-outlined { font-size: 28px; }
+  .step-card h3 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+  .step-card p { font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
+  .steps-connector {
+    display: none; /* Only show on desktop */
+  }
+  @media (min-width: 769px) {
+    .steps-connector {
+      display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 16px);
+      width: 55%; z-index: 0;
+    }
+    .connector-line {
+      height: 2px; background: linear-gradient(90deg, transparent, var(--sage-300), var(--sage-300), transparent);
+      border-radius: 2px;
+    }
+  }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  }
+</style>

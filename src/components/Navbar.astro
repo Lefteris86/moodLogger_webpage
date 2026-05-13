@@ -5,19 +5,30 @@ import logo from '../assets/TheraNode_Logo.png';
 
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
-    <a href="#" class="nav-brand">
+    <a href="/" class="nav-brand">
       <Image src={logo} alt="TheraNode Logo" width={36} height={36} class="nav-logo" />
       <span class="nav-wordmark">TheraNode</span>
     </a>
 
     <div class="nav-links" id="nav-links">
-      <a href="#features">Features</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#screenshots">App Preview</a>
-      <a href="#faq">FAQ</a>
+      <a href="/#features">Features</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/#safety">Safety</a>
+      <a href="/#screenshots">App Preview</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact" class="nav-contact-link">
+        <span class="material-symbols-outlined">mail</span>
+        Contact
+      </a>
     </div>
 
-    <a href="#features" class="nav-cta">Learn More</a>
+    <a href="#" class="nav-cta" id="download-cta" target="_blank" rel="noopener noreferrer">
+      <svg class="gplay-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+        <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33-2.935 1.695-2.345-2.345 2.978-2.68zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+      </svg>
+      Download App
+    </a>
 
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
@@ -78,6 +89,14 @@ import logo from '../assets/TheraNode_Logo.png';
     transition: background var(--transition), transform var(--transition);
   }
   .nav-cta:hover { background: var(--sage-700); transform: translateY(-1px); }
+  .nav-cta { display: inline-flex; align-items: center; gap: 8px; }
+  .gplay-icon { flex-shrink: 0; }
+  .nav-contact-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-contact-link .material-symbols-outlined { font-size: 16px; }
 
   .nav-hamburger {
     display: none;

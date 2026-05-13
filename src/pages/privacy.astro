@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="TheraNode — Privacy Policy" description="TheraNode Privacy Policy. We store all data locally on your device. No servers, no accounts, no analytics.">
+  <Navbar />
+  <main class="privacy-page">
+    <div class="container">
+      <article class="privacy-content reveal">
+
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective Date: May 5, 2026 &middot; Last Updated: May 2026</p>
+
+        <hr />
+
+        <section>
+          <h2>1. Introduction</h2>
+          <p>TheraNode ("the App") is a personal mental wellness companion developed by Eleftherios Kostoulas. This Privacy Policy explains how the App handles your information.</p>
+          <div class="callout">
+            <span class="material-symbols-outlined">info</span>
+            <p><strong>The short version:</strong> TheraNode stores all data locally on your device. We do not collect, transmit, or have access to any of your personal information. We have no servers, no accounts, and no analytics.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>2. Information We Do NOT Collect</h2>
+          <p>TheraNode does <strong>not</strong> collect, transmit, or process any of the following:</p>
+          <ul>
+            <li>Personal identification information (name, email, phone number)</li>
+            <li>Device identifiers (IMEI, advertising ID, hardware serial)</li>
+            <li>Location data</li>
+            <li>Usage analytics or behavioral data</li>
+            <li>Crash reports (stored locally only — see Section 5)</li>
+            <li>Any data through third-party analytics, advertising, or tracking SDKs</li>
+          </ul>
+          <p><strong>We have no servers.</strong> There is no backend infrastructure, no cloud storage, and no network communication of any kind (other than the phone dialer for emergency calls — see Section 6).</p>
+        </section>
+
+        <section>
+          <h2>3. Information Stored Locally on Your Device</h2>
+          <p>The App stores the following data <strong>exclusively on your device</strong>, in the application's private storage area:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Data</th><th>Purpose</th><th>Encryption</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Daily wellness logs</td><td>Core tracking functionality</td><td>✅ AES-256-CBC encrypted</td></tr>
+                <tr><td>Personal notes</td><td>User-entered reflections</td><td>✅ AES-256-CBC encrypted</td></tr>
+                <tr><td>User profile</td><td>Personalization and crisis nudge</td><td>✅ AES-256-CBC encrypted</td></tr>
+                <tr><td>PIN</td><td>App access authentication</td><td>✅ SHA-256 hashed with salt</td></tr>
+                <tr><td>Security question</td><td>Account recovery</td><td>✅ Platform secure storage</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>We cannot access this data.</strong> It exists only on your device and is never transmitted anywhere.</p>
+        </section>
+
+        <section>
+          <h2>4. Data Security</h2>
+          <p>All wellness data is encrypted at rest using <strong>AES-256-CBC</strong> with a unique encryption key stored in your device's secure hardware enclave (Android Keystore or iOS Keychain). Your PIN is never stored in plain text — it is hashed using SHA-256 with a unique per-user salt.</p>
+          <p>The App includes brute-force protection with exponential lockout after failed PIN attempts.</p>
+        </section>
+
+        <section>
+          <h2>5. Crash Logs</h2>
+          <p>If the App encounters an unexpected error, it writes a crash log to a local file on your device containing a timestamp, OS info, and a technical error description. Crash logs <strong>do not</strong> contain any of your wellness data, notes, or personal information. They are stored locally and are never sent automatically.</p>
+          <p>You may choose to voluntarily share crash logs with us via your device's share function (e.g., email) if you wish to report an issue. This is entirely optional.</p>
+        </section>
+
+        <section>
+          <h2>6. Permissions</h2>
+          <p>The App requests one permission:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Permission</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>READ_PHONE_STATE</code> (Android only)</td>
+                  <td>Used exclusively to verify cellular connectivity before offering emergency call buttons. <strong>We do not read, store, or transmit your phone number, IMEI, SIM information, or call history.</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>7. Crisis Safety Feature</h2>
+          <p>When the App detects elevated distress or self-harm indicators, it may display an emergency dialog offering to dial your therapist or your country's crisis hotline. This feature:</p>
+          <ul>
+            <li>Uses the standard phone dialer (via <code>tel:</code> URI) — the App does not place calls directly</li>
+            <li>Requires you to confirm the call in your device's dialer app</li>
+            <li>Does not record or log whether a call was placed</li>
+            <li>Works entirely offline — no data is sent to any server</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Data Export and Backup</h2>
+          <p>The App allows you to:</p>
+          <ul>
+            <li><strong>Export a PDF report</strong> — Generated locally, shared via your device's share sheet</li>
+            <li><strong>Export raw JSON data</strong> — Generated locally, shared via your device's share sheet</li>
+            <li><strong>Create an encrypted backup</strong> — Protected with a password you choose</li>
+          </ul>
+          <p>All exports are generated on-device. We never receive copies of your exports.</p>
+        </section>
+
+        <section>
+          <h2>9. Data Retention and Deletion</h2>
+          <p>Since all data is stored locally on your device:</p>
+          <ul>
+            <li><strong>To delete all data:</strong> Uninstall the App, or clear the App's data through your device's Settings → Apps → TheraNode → Clear Data.</li>
+            <li><strong>Data is never retained by us</strong> because we never receive it in the first place.</li>
+            <li><strong>Backups you create</strong> are stored wherever you choose. You are responsible for managing and deleting those copies.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>10. Children's Privacy</h2>
+          <p>TheraNode is not directed at children under the age of 13. We do not knowingly collect information from children. Since the App collects no data from any user, this concern is inherently mitigated.</p>
+        </section>
+
+        <section>
+          <h2>11. Third-Party Services</h2>
+          <p>TheraNode does <strong>not</strong> integrate with any third-party services, SDKs, or APIs that collect user data. There are no:</p>
+          <ul>
+            <li>Analytics services (e.g., Google Analytics, Firebase Analytics)</li>
+            <li>Advertising networks</li>
+            <li>Social media integrations</li>
+            <li>Cloud storage services</li>
+            <li>Crash reporting services (e.g., Crashlytics, Sentry)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>12. Changes to This Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last Updated" date at the top. Since we have no way to contact you directly, changes will be published at the URL linked from the Google Play Store listing.</p>
+        </section>
+
+        <section>
+          <h2>13. Contact Us</h2>
+          <p>If you have questions or concerns about this Privacy Policy, please contact us at:</p>
+          <p><strong>Email:</strong> <a href="mailto:theranode.info@gmail.com">theranode.info@gmail.com</a></p>
+        </section>
+
+        <section class="summary-section">
+          <h2>14. Summary</h2>
+          <div class="table-wrap">
+            <table class="summary-table">
+              <thead>
+                <tr><th>Question</th><th>Answer</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Do you collect any personal data?</td><td><strong>No</strong></td></tr>
+                <tr><td>Do you transmit data to any server?</td><td><strong>No</strong></td></tr>
+                <tr><td>Do you use analytics or tracking?</td><td><strong>No</strong></td></tr>
+                <tr><td>Do you share data with third parties?</td><td><strong>No</strong></td></tr>
+                <tr><td>Is stored data encrypted?</td><td><strong>Yes — AES-256-CBC</strong></td></tr>
+                <tr><td>Can you access my data?</td><td><strong>No — we have no servers</strong></td></tr>
+                <tr><td>How do I delete my data?</td><td><strong>Uninstall the app or clear app data</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <p class="footer-note">This privacy policy applies to TheraNode version 1.0 and later, available on Google Play.<br/>Application ID: com.theranode.app</p>
+
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .privacy-page {
+    padding: 100px 0 80px;
+    background: var(--bg);
+    min-height: 100vh;
+  }
+  .privacy-content {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 48px 48px 40px;
+    box-shadow: var(--shadow-card);
+  }
+  .privacy-content h1 {
+    font-size: 32px; font-weight: 800; color: var(--primary-dark);
+    letter-spacing: -0.03em; margin-bottom: 8px;
+  }
+  .meta { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  hr { border: none; border-top: 1px solid var(--card-border); margin: 28px 0; }
+  section { margin-bottom: 32px; }
+  section h2 {
+    font-size: 18px; font-weight: 700; color: var(--text-primary);
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--sage-100);
+  }
+  section p { font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 12px; }
+  section ul { padding-left: 24px; margin-bottom: 12px; }
+  section li { font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 6px; }
+  code {
+    background: var(--sage-50); padding: 2px 6px; border-radius: 4px;
+    font-size: 13px; color: var(--primary-dark);
+  }
+  a { color: var(--primary-dark); text-decoration: underline; transition: color var(--transition); }
+  a:hover { color: var(--accent); }
+  .callout {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--sage-50); border-left: 3px solid var(--primary-dark);
+    padding: 16px 20px; border-radius: 0 var(--radius) var(--radius) 0; margin: 16px 0;
+  }
+  .callout .material-symbols-outlined { font-size: 20px; color: var(--primary-dark); flex-shrink: 0; margin-top: 2px; }
+  .callout p { margin: 0; }
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    text-align: left; padding: 10px 14px; background: var(--sage-50);
+    font-weight: 700; color: var(--text-primary); border-bottom: 2px solid var(--sage-200);
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--card-border); color: var(--text-secondary); }
+  .summary-table td:last-child { font-weight: 700; color: var(--accent); }
+  .footer-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 32px; }
+  @media (max-width: 600px) {
+    .privacy-content { padding: 28px 20px; }
+  }
+</style>
+
+<script>
+  // Scroll reveal for this page
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Navbar scroll shadow
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar?.classList.toggle('scrolled', window.scrollY > 20); });
+
+  // Mobile hamburger
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger?.addEventListener('click', () => { navLinks?.classList.toggle('open'); });
+  navLinks?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks?.classList.remove('open'));
+  });
+</script>

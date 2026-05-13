@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import emergencyImg from '../assets/emergency pop up.jpg';
+---
+
+<section class="safety" id="safety">
+  <div class="container safety-inner">
+    <div class="safety-content reveal">
+      <span class="section-label">Crisis Support</span>
+      <h2>Your Safety Matters — Always</h2>
+      <p class="safety-desc">
+        When TheraNode detects elevated distress indicators, it proactively
+        displays a <strong>Safety Nudge</strong> — offering direct access to your
+        therapist's phone number and your country's crisis helpline.
+      </p>
+      <ul class="safety-features">
+        <li>
+          <span class="material-symbols-outlined">public</span>
+          <div>
+            <strong>50+ Countries Supported</strong>
+            <span>Verified crisis hotlines across North America, Europe, Asia, Latin America, Oceania, and Africa.</span>
+          </div>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">cell_tower</span>
+          <div>
+            <strong>Connectivity-Aware</strong>
+            <span>The app checks for an active SIM card and cellular service before offering call buttons. If unavailable, numbers are displayed as copyable text.</span>
+          </div>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">health_and_safety</span>
+          <div>
+            <strong>Not a Diagnosis</strong>
+            <span>TheraNode does not diagnose. It simply observes self-reported markers and connects you to support when thresholds are exceeded.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="safety-phone reveal reveal-delay-2">
+      <div class="phone-frame-safety">
+        <Image src={emergencyImg} alt="TheraNode Safety Nudge popup showing crisis helpline and therapist call options" width={280} height={560} class="phone-screen" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .safety { padding: 100px 0; background: var(--bg); }
+  .section-label {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
+  }
+  .safety-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  .safety-content h2 {
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 16px;
+  }
+  .safety-desc {
+    font-size: 16px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px;
+  }
+  .safety-features {
+    list-style: none; display: flex; flex-direction: column; gap: 20px;
+  }
+  .safety-features li {
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .safety-features li .material-symbols-outlined {
+    font-size: 24px; color: var(--primary-dark); flex-shrink: 0; margin-top: 2px;
+  }
+  .safety-features li strong {
+    display: block; font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;
+  }
+  .safety-features li span:last-child {
+    font-size: 14px; line-height: 1.6; color: var(--text-secondary);
+  }
+  .safety-phone { display: flex; justify-content: center; }
+  .phone-frame-safety {
+    width: 260px; border-radius: 28px; overflow: hidden;
+    border: 6px solid var(--sage-200);
+    box-shadow: 0 20px 56px rgba(30,41,59,0.12), 0 0 0 1px rgba(107,135,120,0.08);
+    background: #fff; transition: all var(--transition);
+  }
+  .phone-frame-safety:hover { transform: translateY(-6px); box-shadow: 0 28px 64px rgba(30,41,59,0.16); }
+  .phone-screen { width: 100%; height: auto; display: block; }
+  @media (max-width: 900px) {
+    .safety-inner { grid-template-columns: 1fr; text-align: center; }
+    .safety-desc { margin-left: auto; margin-right: auto; }
+    .safety-features { align-items: center; }
+    .safety-features li { text-align: left; max-width: 400px; }
+    .safety-phone { order: -1; }
+  }
+</style>

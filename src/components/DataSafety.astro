@@ -1,0 +1,53 @@
+---
+const badges = [
+  { icon: "group_off", label: "No data shared with third parties" },
+  { icon: "cloud_off", label: "No data collected" },
+  { icon: "encrypted", label: "Data encrypted at rest (AES-256)" },
+  { icon: "delete_sweep", label: "Users can delete all data" },
+  { icon: "block", label: "No ads, no analytics SDKs" },
+  { icon: "accessibility_new", label: "Screen reader accessible" },
+];
+---
+
+<section class="data-safety">
+  <div class="container">
+    <div class="safety-strip">
+      {badges.map((b) => (
+        <div class="safety-badge reveal">
+          <span class="material-symbols-outlined">{b.icon}</span>
+          <span class="badge-label">{b.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .data-safety {
+    padding: 40px 0;
+    background: linear-gradient(135deg, var(--sage-50) 0%, var(--sage-100) 100%);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .safety-strip {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 40px;
+  }
+  .safety-badge {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 100px;
+    border: 1px solid rgba(107,135,120,0.12);
+  }
+  .safety-badge .material-symbols-outlined {
+    font-size: 20px; color: var(--accent);
+  }
+  .badge-label {
+    font-size: 13px; font-weight: 600; color: var(--text-primary); letter-spacing: 0.01em;
+  }
+  @media (max-width: 600px) {
+    .safety-strip { gap: 12px; }
+    .safety-badge { padding: 8px 14px; }
+    .badge-label { font-size: 12px; }
+  }
+</style>

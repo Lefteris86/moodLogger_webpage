@@ -1,28 +1,75 @@
 ---
-const faqs = [
+/* FAQ categories sourced from TheraNode_Q&A_Manual.md */
+const categories = [
   {
-    q: "How do I share my data with my therapist?",
-    a: "TheraNode generates professional PDF reports you can export with one tap. Use the \"Export Detailed PDF Report\" button on the Analytics screen to share via email, Google Drive, or any method you prefer. Your therapist receives a clinical-grade summary without needing the app."
+    label: "Security & Privacy",
+    icon: "shield_lock",
+    items: [
+      {
+        q: "How do I share my data with my therapist?",
+        a: "TheraNode generates professional PDF reports you can export with one tap. Use the \"Export Detailed PDF Report\" button on the Analytics screen — then choose to email it directly to your therapist, share via WhatsApp, or save to your device. Your therapist receives a comprehensive summary without needing the app."
+      },
+      {
+        q: "How secure are my logs? Could another app read them?",
+        a: "Your data is protected by medical-grade AES-256-CBC encryption. Every time you close the app, your files are scrambled and unreadable to any other app, file explorer, or malicious software. The encryption keys are stored in your phone's hardware security enclave (Android Keystore / iOS Keychain)."
+      },
+      {
+        q: "Does TheraNode sync data to any cloud or backup service?",
+        a: "No. TheraNode is designed for absolute privacy. All data is stored 100% locally on your device. It is never uploaded to the cloud or synced to any servers. We have no backend infrastructure, no accounts, and no analytics — ensuring your data stays entirely in your hands."
+      },
+      {
+        q: "What happens if I forget my PIN?",
+        a: "You can reset your PIN using your Security Answer (set during onboarding). Tap \"Forgot PIN?\" on the login screen. However, if you lose both your PIN and your Security Answer, your data is permanently encrypted — TheraNode has no \"backdoor\" as this would compromise your confidentiality."
+      },
+      {
+        q: "What should I do if my phone is lost or stolen?",
+        a: "Because your data is AES-256 encrypted and protected by PIN/Biometrics, it is extremely difficult for a thief to access your logs. As an extra precaution, use your phone's \"Remote Wipe\" feature (Find My Device on Android, Find My on iOS) to erase your device remotely."
+      }
+    ]
   },
   {
-    q: "What happens if I lose my phone or get a new device?",
-    a: "You can securely move your data using Encrypted Backup & Restore. On your old phone, create an encrypted .theranode backup file with a password. Transfer it to your new device, install TheraNode, and restore during setup. Your entire history will be recovered."
+    label: "Wellness & Safety",
+    icon: "health_and_safety",
+    items: [
+      {
+        q: "Why did the app suggest I call my therapist today?",
+        a: "TheraNode does not provide medical diagnoses. It simply observes your self-reported markers (like severe stress or distress). When these reach a recognized threshold, the app triggers a \"Safety Nudge\" to ensure you have quick access to support — including your therapist's number and your country's verified crisis hotline."
+      },
+      {
+        q: "Why does the app ask for my country during setup?",
+        a: "This allows the app to automatically map the correct Regional Crisis Helpline to your Safety Nudges. Around 50 countries are supported across North America, Europe, Asia, Latin America, Oceania, and Africa. If your country is not listed, selecting \"Other\" displays universal guidance instead of a potentially wrong number."
+      },
+      {
+        q: "Is TheraNode a medical device or substitute for therapy?",
+        a: "No. TheraNode is a personal wellness companion and is not a medical device. It does not provide diagnoses. Always consult a qualified healthcare professional for medical advice. TheraNode is designed to complement — not replace — your therapeutic relationship."
+      },
+      {
+        q: "What happens if I miss logging for a few days?",
+        a: "TheraNode handles missing data gracefully. Averages are calculated using only the days you actually logged, preventing empty days from dragging your scores to zero. Charts will simply show gaps for the missing dates."
+      }
+    ]
   },
   {
-    q: "Is TheraNode a substitute for professional therapy?",
-    a: "No. TheraNode is a personal wellness companion and is not a medical device. It does not provide clinical diagnoses. Always consult a qualified healthcare professional for medical advice. TheraNode is designed to complement — not replace — your therapeutic relationship."
-  },
-  {
-    q: "What happens if I forget my PIN?",
-    a: "You can reset your PIN using your Security Answer (the secret answer you set during onboarding). Tapping \"Forgot PIN?\" on the login screen will prompt you for this answer. However, if you lose both your PIN and your Security Answer, your data is permanently encrypted and cannot be recovered."
-  },
-  {
-    q: "Does TheraNode sync my data to a cloud or backup service?",
-    a: "No. TheraNode is designed for absolute privacy. All data is stored 100% locally on your device. It is never uploaded to the cloud or synced to any servers, meaning your data stays entirely in your hands and off the internet."
-  },
-  {
-    q: "Why can't I see my report until next week?",
-    a: "TheraNode strictly locks the current week's report until the week has fully concluded (Monday morning). This is a deliberate clinical design to prevent score-gaming. By making reports available only after the week has ended, TheraNode guarantees that every entry is honest and uninfluenced."
+    label: "App Functionality",
+    icon: "settings",
+    items: [
+      {
+        q: "Why can't I see my report until next week?",
+        a: "TheraNode strictly locks the current week's report until the week has fully concluded (Monday morning). This is a deliberate design to prevent \"score-gaming\" — if you could view your report mid-week, you might submit adjusted entries to manipulate a metric. By making reports available only after the week ends, every entry remains honest and uninfluenced."
+      },
+      {
+        q: "What is the difference between Standard and Advanced mode?",
+        a: "Standard mode tracks 8 essential mood and vitality metrics for simplicity. Advanced mode adds 15 in-depth indicators (like overthinking, hopelessness, or somatic comfort) for deeper insight into your well-being. You can switch between them anytime using the tabs on the main screen."
+      },
+      {
+        q: "Can I transfer my data to a new phone?",
+        a: "Yes. Use the Encrypted Backup & Restore feature. On your old phone, create a password-protected .theranode backup file via the Settings menu. Transfer it to your new device, install TheraNode, and restore during the initial setup. Your entire history — including your PIN and security credentials — will be recovered."
+      },
+      {
+        q: "Does TheraNode support screen readers?",
+        a: "Yes. TheraNode includes built-in accessibility annotations for TalkBack (Android) and VoiceOver (iOS). All buttons, sliders, PIN entries, and tab controls are labeled. Charts are summarized into human-readable descriptions rather than reading raw graph data. These features are always active and require no settings."
+      }
+    ]
   }
 ];
 ---
@@ -34,19 +81,28 @@ const faqs = [
       <h2>Common Questions</h2>
       <p>Everything you need to know about using TheraNode.</p>
     </div>
-    <div class="faq-list">
-      {faqs.map((item, i) => (
-        <div class={`faq-item reveal reveal-delay-${(i % 3) + 1}`} data-faq>
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">{item.q}</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>{item.a}</p>
-          </div>
+
+    {categories.map((cat, ci) => (
+      <div class="faq-category reveal">
+        <div class="faq-cat-header">
+          <span class="material-symbols-outlined">{cat.icon}</span>
+          <h3>{cat.label}</h3>
         </div>
-      ))}
-    </div>
+        <div class="faq-list">
+          {cat.items.map((item, i) => (
+            <div class="faq-item" data-faq>
+              <button class="faq-trigger" aria-expanded="false">
+                <span class="faq-question">{item.q}</span>
+                <span class="material-symbols-outlined faq-chevron">expand_more</span>
+              </button>
+              <div class="faq-answer">
+                <p>{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 </section>
 
@@ -54,72 +110,44 @@ const faqs = [
   .faq { padding: 100px 0; background: var(--bg); }
   .section-header { text-align: center; margin-bottom: 48px; }
   .section-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--sage-500);
-    margin-bottom: 12px;
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
   }
   .section-header h2 {
-    font-size: clamp(24px, 3.5vw, 34px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    margin-bottom: 12px;
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
   }
-  .section-header p {
-    font-size: 16px;
-    color: var(--text-secondary);
+  .section-header p { font-size: 16px; color: var(--text-secondary); }
+
+  .faq-category { max-width: 720px; margin: 0 auto 40px; }
+  .faq-category:last-child { margin-bottom: 0; }
+  .faq-cat-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--sage-100);
   }
-  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq-cat-header .material-symbols-outlined { font-size: 22px; color: var(--primary-dark); }
+  .faq-cat-header h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); letter-spacing: 0.02em; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
   .faq-item {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: all var(--transition);
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); overflow: hidden; transition: all var(--transition);
   }
   .faq-item:hover { border-color: var(--sage-300); }
   .faq-item.open { border-color: rgba(57,103,82,0.25); box-shadow: 0 2px 12px rgba(57,103,82,0.06); }
   .faq-trigger {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 20px 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-family: inherit;
+    width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 18px 22px; background: none; border: none; cursor: pointer;
+    text-align: left; font-family: inherit;
   }
-  .faq-question {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.4;
-  }
+  .faq-question { font-size: 14px; font-weight: 600; color: var(--text-primary); line-height: 1.4; }
   .faq-item.open .faq-question { color: var(--primary-dark); }
   .faq-chevron {
-    font-size: 22px;
-    color: var(--text-muted);
-    transition: transform var(--transition), color var(--transition);
-    flex-shrink: 0;
+    font-size: 22px; color: var(--text-muted);
+    transition: transform var(--transition), color var(--transition); flex-shrink: 0;
   }
   .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--primary-dark); }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-  }
-  .faq-item.open .faq-answer { max-height: 300px; }
-  .faq-answer p {
-    padding: 0 24px 20px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--text-secondary);
-  }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-item.open .faq-answer { max-height: 400px; }
+  .faq-answer p { padding: 0 22px 18px; font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
 </style>

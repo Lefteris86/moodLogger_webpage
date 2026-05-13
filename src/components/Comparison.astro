@@ -1,0 +1,157 @@
+---
+const comparisons = [
+  {
+    feature: "For Users",
+    competitor: "Basic mood logging that offers little insight into actual behavioral patterns or triggers.",
+    theranode: "Consistent use unlocks weekly analytics that reveal hidden triggers and patterns, empowering you to make changes for a significantly better life.",
+  },
+  {
+    feature: "For Therapists",
+    competitor: "Relying on clients trying to recall vague feelings from weeks ago during sessions.",
+    theranode: "Clients bring detailed, professional PDF reports. You get precise data on their week, making your sessions much more effective and targeted.",
+  },
+  {
+    feature: "Data Privacy",
+    competitor: "Data stored on cloud servers, vulnerable to breaches or monetized by third parties.",
+    theranode: "100% On-device storage. Medical-grade AES-256 encryption. Zero cloud syncing.",
+  },
+  {
+    feature: "Tracking Depth",
+    competitor: "Limited to basic emojis (Happy, Sad, Angry) that miss the full picture.",
+    theranode: "23 precision indicators tracking cognitive, physical, and emotional nuances.",
+  }
+];
+---
+
+<section class="comparison" id="comparison">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The TheraNode Advantage</span>
+      <h2>Beyond Basic Tracking</h2>
+      <p>See why TheraNode is the superior choice for both individuals seeking growth and professionals delivering care.</p>
+    </div>
+
+    <div class="table-container reveal reveal-delay-1">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="feature-col">Key Features</th>
+            <th class="theranode-col">
+              <span class="brand">TheraNode</span>
+            </th>
+            <th class="competitor-col">Standard Wellness Apps</th>
+          </tr>
+        </thead>
+        <tbody>
+          {comparisons.map((row) => (
+            <tr>
+              <td class="feature-name">{row.feature}</td>
+              <td class="theranode-cell">
+                <span class="material-symbols-outlined icon-check">check_circle</span>
+                {row.theranode}
+              </td>
+              <td class="competitor-cell">
+                <span class="material-symbols-outlined icon-close">cancel</span>
+                {row.competitor}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .comparison { padding: 100px 0; background: var(--bg-alt); }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-label {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
+  }
+  .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+  
+  .table-container {
+    max-width: 1000px; margin: 0 auto;
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--sage-300);
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(30, 41, 59, 0.08), 0 0 0 1px rgba(144, 193, 167, 0.3);
+  }
+  .comparison-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .comparison-table th, .comparison-table td { padding: 24px 32px; border-bottom: 1px solid var(--card-border); }
+  .comparison-table th { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+  
+  .feature-col { width: 20%; }
+  .competitor-col { width: 40%; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px !important; }
+  .theranode-col { 
+    width: 40%; 
+    background: rgba(144,193,167,0.1); 
+    border-left: 2px solid var(--sage-200); 
+    border-right: 2px solid var(--sage-200); 
+  }
+  .brand { color: var(--primary-dark); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; text-transform: none; }
+  
+  .feature-name { font-weight: 700; color: var(--text-primary); font-size: 15px; }
+  .competitor-cell { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+  .theranode-cell { 
+    background: rgba(144,193,167,0.05); 
+    border-left: 2px solid var(--sage-200); 
+    border-right: 2px solid var(--sage-200); 
+    color: var(--text-primary); 
+    font-size: 15px; 
+    line-height: 1.6; 
+    font-weight: 500; 
+  }
+  tr:last-child td { border-bottom: none; }
+  
+  .icon-close { color: #e11d48; font-size: 22px; vertical-align: text-bottom; margin-right: 8px; font-variation-settings: 'FILL' 1; }
+  .icon-check { color: #10b981; font-size: 24px; vertical-align: text-bottom; margin-right: 8px; font-variation-settings: 'FILL' 1; }
+  
+  @media (max-width: 768px) {
+    .table-container { border: none; box-shadow: none; background: transparent; }
+    .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table td, .comparison-table th {
+      display: block; width: 100%;
+    }
+    .comparison-table thead { display: none; }
+    .comparison-table tr { 
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .comparison-table td { border-bottom: none; padding: 20px 24px; }
+    
+    .feature-name { 
+      background: var(--sage-50); 
+      font-size: 16px; 
+      padding: 16px 24px !important;
+      border-bottom: 1px solid var(--card-border) !important;
+      color: var(--primary-dark);
+    }
+    .theranode-cell { 
+      position: relative; padding-top: 36px !important; 
+      background: rgba(144,193,167,0.1); 
+      border: none !important; 
+      border-bottom: 1px solid var(--card-border) !important;
+    }
+    .theranode-cell::before { 
+      content: "TheraNode"; 
+      position: absolute; top: 16px; left: 24px;
+      font-size: 12px; font-weight: 800; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .competitor-cell { position: relative; padding-top: 36px !important; border-bottom: none !important; }
+    .competitor-cell::before { 
+      content: "Standard Wellness Apps"; 
+      position: absolute; top: 16px; left: 24px;
+      font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
+    }
+  }
+</style>
