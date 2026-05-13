@@ -10,6 +10,7 @@ import imgExport from '../assets/save therapist pdf report options.jpg';
 import imgAuth from '../assets/img_auth.jpg';
 
 const screens = [
+  { img: imgAuth, alt: "Secure PIN entry with biometric fingerprint login", label: "Secure Access" },
   { img: imgMain, alt: "TheraNode daily logging screen with mood, stress, and energy sliders", label: "Daily Logging" },
   { img: img1, alt: "Weekly well-being average score with radar chart and week-at-a-glance stats", label: "Weekly Analytics" },
   { img: img2, alt: "Sleep vs Stress balance chart and Inner Balance tracker", label: "Sleep & Stress" },
@@ -17,7 +18,7 @@ const screens = [
   { img: img4, alt: "Tag impact analysis, trend insights, and PDF export button", label: "Smart Insights" },
   { img: imgOverall, alt: "All-time trends showing well-being, mood, stress, and motivation across weeks", label: "All-Time Trends" },
   { img: imgExport, alt: "Share exported PDF file menu with email therapist, share via OS, and save options", label: "Therapist Export" },
-  { img: imgAuth, alt: "Secure PIN entry with biometric fingerprint login", label: "Secure Access" },
+  
 ];
 ---
 
@@ -60,12 +61,11 @@ const screens = [
   }
   .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; }
   .screenshot-scroll {
-    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
     scrollbar-width: thin; scrollbar-color: var(--sage-300) transparent;
-    padding-bottom: 16px;
   }
   .screenshot-track {
-    display: flex; gap: 28px; min-width: min-content; padding: 0 24px;
+    display: flex; gap: 28px; min-width: min-content; padding: 16px 24px 32px;
   }
   .screenshot-item { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .screenshot-phone {
@@ -74,7 +74,12 @@ const screens = [
     background: #fff; transition: all var(--transition);
   }
   .screenshot-phone:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 24px 56px rgba(30,41,59,0.15); }
-  .screenshot-img { width: 100%; height: auto; display: block; }
+  .screenshot-img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin-bottom: -4%; /* Crops out the black Android navigation bar */
+  }
   .screenshot-label { font-size: 13px; font-weight: 600; color: var(--sage-600); letter-spacing: 0.02em; }
   .scroll-hint {
     text-align: center; margin-top: 24px; font-size: 13px; color: var(--text-muted);
