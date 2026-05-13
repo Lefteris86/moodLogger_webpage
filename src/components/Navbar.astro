@@ -1,23 +1,31 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/TheraNode_Logo.webp';
+
+const base = import.meta.env.BASE_URL;
+// Ensure base ends with a slash for consistent concatenation if needed, though Astro usually provides it.
+// Actually, Astro's BASE_URL for GitHub Pages usually looks like '/moodLogger_webpage' (no trailing slash) or '/'
+const getPath = (path) => {
+  if (base === '/') return path;
+  return path.startsWith('/') ? `${base}${path}` : `${base}/${path}`;
+};
 ---
 
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
-    <a href="/" class="nav-brand">
+    <a href={base} class="nav-brand">
       <Image src={logo} alt="TheraNode Logo" width={36} height={36} class="nav-logo" />
       <span class="nav-wordmark">TheraNode</span>
     </a>
 
     <div class="nav-links" id="nav-links">
-      <a href="/#features">Features</a>
-      <a href="/#how-it-works">How It Works</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/#safety">Safety</a>
-      <a href="/#screenshots">App Preview</a>
-      <a href="/#faq">FAQ</a>
-      <a href="/#contact" class="nav-contact-link">
+      <a href={getPath('/#features')}>Features</a>
+      <a href={getPath('/#how-it-works')}>How It Works</a>
+      <a href={getPath('/privacy')}>Privacy Policy</a>
+      <a href={getPath('/#safety')}>Safety</a>
+      <a href={getPath('/#screenshots')}>App Preview</a>
+      <a href={getPath('/#faq')}>FAQ</a>
+      <a href={getPath('/#contact')} class="nav-contact-link">
         <span class="material-symbols-outlined">mail</span>
         Contact
       </a>
