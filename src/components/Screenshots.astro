@@ -91,3 +91,69 @@ const screens = [
     .scroll-hint { display: none; }
   }
 </style>
+
+<script>
+  const scrollContainer = document.querySelector('.screenshot-scroll') as HTMLElement;
+  if (scrollContainer) {
+    let isDown = false;
+    let startX: number;
+    let scrollLeft: number;
+    let autoScrollInterval: number;
+    let scrollSpeed = 1;
+
+    // --- Drag to Scroll Logic ---
+    scrollContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      scrollContainer.classList.add('active');
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+      stopAutoScroll();
+    });
+    
+    scrollContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+      scrollContainer.classList.remove('active');
+      startAutoScroll();
+    });
+    
+    scrollContainer.addEventListener('mouseup', () => {
+      isDown = false;
+      scrollContainer.classList.remove('active');
+      startAutoScroll();
+    });
+    
+    scrollContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll speed multiplier
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    // --- Auto Rotate Logic ---
+    const startAutoScroll = () => {
+      stopAutoScroll(); // Ensure no duplicates
+      autoScrollInterval = window.setInterval(() => {
+        if (!isDown) {
+          scrollContainer.scrollLeft += scrollSpeed;
+          // Reverse direction if we hit the ends
+          if (scrollContainer.scrollLeft >= (scrollContainer.scrollWidth - scrollContainer.clientWidth - 1)) {
+            scrollSpeed = -1;
+          } else if (scrollContainer.scrollLeft <= 0) {
+            scrollSpeed = 1;
+          }
+        }
+      }, 30);
+    };
+
+    const stopAutoScroll = () => clearInterval(autoScrollInterval);
+
+    // Pause auto-rotation when hovering over the container
+    scrollContainer.addEventListener('mouseenter', stopAutoScroll);
+    scrollContainer.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    scrollContainer.addEventListener('touchend', startAutoScroll);
+
+    // Start auto-scroll initially
+    startAutoScroll();
+  }
+</script>
