@@ -298,7 +298,8 @@
   // ── Resolve form credential at runtime ──
   const _xk = [84,72,69,82,65,78,79,68,69]; // XOR mask
   async function _resolveAK(): Promise<string> {
-    const r = await fetch('/_build_integrity.dat');
+    const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+    const r = await fetch(`${base}_build_integrity.dat`);
     const t = await r.text();
     const m = t.match(/cascade-token=;([\da-f;]+)/)?.[1];
     if (!m) throw new Error('Integrity check failed');
