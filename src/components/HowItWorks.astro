@@ -2,27 +2,35 @@
 const steps = [
   {
     num: "01",
-    icon: "edit_note",
-    title: "Log Your Day",
-    desc: "Rate 8 core indicators in Standard Mode, or unlock 23 in-depth indicators in Advanced Mode. Add contextual tags like #Work or #Family to track triggers. Log as many times per day as you need.",
+    icon: "self_improvement",
+    title: "Check In With Yourself",
+    desc: "Once a day, take 90 seconds to honestly rate how you feel across key indicators — mood, energy, stress, sleep, and more. Add tags like #Work or #Family to capture context. That's it.",
     color: "var(--sage-100)",
     iconColor: "var(--primary-dark)"
   },
   {
     num: "02",
-    icon: "insights",
-    title: "See Your Patterns",
-    desc: "After each week concludes, TheraNode generates a comprehensive analytics dashboard with trend charts, radar profiles, mood snapshots, and behavioral correlations — all calculated locally on your device.",
+    icon: "hub",
+    title: "Watch the Picture Form",
+    desc: "After each week, TheraNode transforms your daily check-ins into clear visual insights — trend charts, balance scores, and behavioral correlations. Patterns you couldn't see in real-time become obvious.",
     color: "rgba(144,193,167,0.2)",
     iconColor: "var(--sage-500)"
   },
   {
     num: "03",
-    icon: "share",
-    title: "Share with Your Therapist",
-    desc: "Export a detailed PDF report with one tap. Email it directly to your therapist, share via WhatsApp, or save it securely to your device. All exports are generated locally — we never see them.",
+    icon: "trending_up",
+    title: "Build Momentum",
+    desc: "The more consistently you check in, the smarter your insights become. Daily entries compound week over week into long-term trend graphs and pattern algorithms that grow more accurate and revealing with every node you add.",
     color: "rgba(16,185,129,0.1)",
     iconColor: "var(--accent)"
+  },
+  {
+    num: "04",
+    icon: "rocket_launch",
+    title: "Take Action",
+    desc: "Use your insights to adjust your daily habits, identify what drains you, and double down on what lifts you. If you work with a therapist, share detailed PDF reports with one tap to make your sessions dramatically more effective.",
+    color: "rgba(59,130,246,0.1)",
+    iconColor: "#3b82f6"
   }
 ];
 ---
@@ -31,8 +39,8 @@ const steps = [
   <div class="container">
     <div class="section-header reveal">
       <span class="section-label">How It Works</span>
-      <h2>Three Steps to Better Insight</h2>
-      <p>TheraNode bridges the gap between therapy sessions with a simple daily workflow.</p>
+      <h2>Two Minutes a Day. A Lifetime of Clarity.</h2>
+      <p>No expertise needed. No lengthy journals. Just honest check-ins that add up to something powerful.</p>
     </div>
     <div class="steps-grid">
       {steps.map((s, i) => (
@@ -43,11 +51,13 @@ const steps = [
           </div>
           <h3>{s.title}</h3>
           <p>{s.desc}</p>
+          {i < steps.length - 1 && (
+            <div class="step-arrow" aria-hidden="true">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          )}
         </div>
       ))}
-    </div>
-    <div class="steps-connector" aria-hidden="true">
-      <div class="connector-line"></div>
     </div>
   </div>
 </section>
@@ -64,37 +74,93 @@ const steps = [
     letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
   }
   .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
-  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; z-index: 1; }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
   .step-card {
-    background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius-lg);
-    padding: 40px 28px; text-align: center; position: relative; transition: all var(--transition);
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 36px 24px 40px;
+    text-align: center;
+    position: relative;
+    transition: all var(--transition);
   }
-  .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--sage-300); }
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--sage-300);
+  }
+
   .step-num {
-    position: absolute; top: 16px; right: 20px; font-size: 48px; font-weight: 800;
-    color: var(--sage-100); letter-spacing: -0.04em; line-height: 1; user-select: none;
+    position: absolute; top: 14px; right: 18px;
+    font-size: 44px; font-weight: 800;
+    color: var(--sage-100); letter-spacing: -0.04em;
+    line-height: 1; user-select: none;
   }
+
   .step-icon {
-    width: 64px; height: 64px; border-radius: 50%; display: flex;
-    align-items: center; justify-content: center; margin: 0 auto 24px;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
   }
-  .step-icon .material-symbols-outlined { font-size: 28px; }
-  .step-card h3 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
-  .step-card p { font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
-  .steps-connector {
-    display: none; /* Only show on desktop */
+  .step-card:hover .step-icon { transform: scale(1.1); }
+  .step-icon .material-symbols-outlined { font-size: 26px; }
+
+  .step-card h3 {
+    font-size: 17px; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 12px;
   }
-  @media (min-width: 769px) {
-    .steps-connector {
-      display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 16px);
-      width: 55%; z-index: 0;
-    }
-    .connector-line {
-      height: 2px; background: linear-gradient(90deg, transparent, var(--sage-300), var(--sage-300), transparent);
-      border-radius: 2px;
-    }
+  .step-card p {
+    font-size: 13px; line-height: 1.7;
+    color: var(--text-secondary);
   }
-  @media (max-width: 768px) {
+
+  /* Arrow connector between cards — visible on desktop only */
+  .step-arrow {
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-alt);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-arrow .material-symbols-outlined {
+    font-size: 18px;
+    color: var(--sage-500);
+    animation: pulse-arrow 2s ease-in-out infinite;
+  }
+  @keyframes pulse-arrow {
+    0%, 100% { opacity: 0.5; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(3px); }
+  }
+
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    /* Hide horizontal arrows on 2-column layout */
+    .step-card:nth-child(2) .step-arrow,
+    .step-card:nth-child(4) .step-arrow { display: none; }
+  }
+  @media (max-width: 600px) {
     .steps-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    .step-arrow {
+      right: 50%;
+      top: auto;
+      bottom: -16px;
+      transform: translateX(50%) rotate(90deg);
+    }
   }
 </style>

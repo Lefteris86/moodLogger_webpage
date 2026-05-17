@@ -1,13 +1,17 @@
 ---
-/* FAQ categories sourced from TheraNode_Q&A_Manual.md */
+/* FAQ — Essential questions only. Full Q&A available in the app. */
 const categories = [
   {
-    label: "Security & Privacy",
-    icon: "shield_lock",
+    label: "About TheraNode",
+    icon: "help_center",
     items: [
       {
-        q: "How do I share my data with my therapist?",
-        a: "TheraNode generates professional PDF reports you can export with one tap. Use the \"Export Detailed PDF Report\" button on the Analytics screen — then choose to email it directly to your therapist, share via WhatsApp, or save to your device. Your therapist receives a comprehensive summary without needing the app."
+        q: "Do I need to be in therapy to use TheraNode?",
+        a: "Not at all. TheraNode is designed for everyone who wants to understand their mental patterns better. Whether you're managing daily stress, navigating a tough period, or simply curious about your emotional well-being — TheraNode gives you clarity. If you do work with a therapist, the app becomes even more powerful with its professional PDF export feature."
+      },
+      {
+        q: "Is TheraNode a medical device or substitute for therapy?",
+        a: "No. TheraNode is a personal wellness companion and is not a medical device. It does not provide diagnoses. Always consult a qualified healthcare professional for medical advice. TheraNode is designed to complement — not replace — your therapeutic relationship."
       },
       {
         q: "How secure are my logs? Could another app read them?",
@@ -16,58 +20,6 @@ const categories = [
       {
         q: "Does TheraNode sync data to any cloud or backup service?",
         a: "No. TheraNode is designed for absolute privacy. All data is stored 100% locally on your device. It is never uploaded to the cloud or synced to any servers. We have no backend infrastructure, no accounts, and no analytics — ensuring your data stays entirely in your hands."
-      },
-      {
-        q: "What happens if I forget my PIN?",
-        a: "You can reset your PIN using your Security Answer (set during onboarding). Tap \"Forgot PIN?\" on the login screen. However, if you lose both your PIN and your Security Answer, your data is permanently encrypted — TheraNode has no \"backdoor\" as this would compromise your confidentiality."
-      },
-      {
-        q: "What should I do if my phone is lost or stolen?",
-        a: "Because your data is AES-256 encrypted and protected by PIN/Biometrics, it is extremely difficult for a thief to access your logs. As an extra precaution, use your phone's \"Remote Wipe\" feature (Find My Device on Android, Find My on iOS) to erase your device remotely."
-      }
-    ]
-  },
-  {
-    label: "Wellness & Safety",
-    icon: "health_and_safety",
-    items: [
-      {
-        q: "Why did the app suggest I call my therapist today?",
-        a: "TheraNode does not provide medical diagnoses. It simply observes your self-reported markers (like severe stress or distress). When these reach a recognized threshold, the app triggers a \"Safety Nudge\" to ensure you have quick access to support — including your therapist's number and your country's verified crisis hotline."
-      },
-      {
-        q: "Why does the app ask for my country during setup?",
-        a: "This allows the app to automatically map the correct Regional Crisis Helpline to your Safety Nudges. Around 50 countries are supported across North America, Europe, Asia, Latin America, Oceania, and Africa. If your country is not listed, selecting \"Other\" displays universal guidance instead of a potentially wrong number."
-      },
-      {
-        q: "Is TheraNode a medical device or substitute for therapy?",
-        a: "No. TheraNode is a personal wellness companion and is not a medical device. It does not provide diagnoses. Always consult a qualified healthcare professional for medical advice. TheraNode is designed to complement — not replace — your therapeutic relationship."
-      },
-      {
-        q: "What happens if I miss logging for a few days?",
-        a: "TheraNode handles missing data gracefully. Averages are calculated using only the days you actually logged, preventing empty days from dragging your scores to zero. Charts will simply show gaps for the missing dates."
-      }
-    ]
-  },
-  {
-    label: "App Functionality",
-    icon: "settings",
-    items: [
-      {
-        q: "Why can't I see my report until next week?",
-        a: "TheraNode strictly locks the current week's report until the week has fully concluded (Monday morning). This is a deliberate design to prevent \"score-gaming\" — if you could view your report mid-week, you might submit adjusted entries to manipulate a metric. By making reports available only after the week ends, every entry remains honest and uninfluenced."
-      },
-      {
-        q: "What is the difference between Standard and Advanced mode?",
-        a: "Standard mode tracks 8 essential mood and vitality metrics for simplicity. Advanced mode adds 15 in-depth indicators (like overthinking, hopelessness, or somatic comfort) for deeper insight into your well-being. You can switch between them anytime using the tabs on the main screen."
-      },
-      {
-        q: "Can I transfer my data to a new phone?",
-        a: "Yes. Use the Encrypted Backup & Restore feature. On your old phone, create a password-protected .theranode backup file via the Settings menu. Transfer it to your new device, install TheraNode, and restore during the initial setup. Your entire history — including your PIN and security credentials — will be recovered."
-      },
-      {
-        q: "Does TheraNode support screen readers?",
-        a: "Yes. TheraNode includes built-in accessibility annotations for TalkBack (Android) and VoiceOver (iOS). All buttons, sliders, PIN entries, and tab controls are labeled. Charts are summarized into human-readable descriptions rather than reading raw graph data. These features are always active and require no settings."
       }
     ]
   }

@@ -1,0 +1,101 @@
+---
+---
+
+<section class="why-theranode" id="why-theranode">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Modern Mind</span>
+      <h2>Every Entry is a Node.<br/>Every Week, a Clearer Map.</h2>
+      <p>In a world that never stops talking, understanding yourself starts with a single honest moment each day.</p>
+    </div>
+    <div class="empathy-grid">
+      <div class="empathy-card reveal reveal-delay-1">
+        <div class="empathy-icon" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
+          <span class="material-symbols-outlined">psychology</span>
+        </div>
+        <h3>The Overload</h3>
+        <p>In the last two decades, the volume of information hitting your brain has exploded — social media, news cycles, work pressure, family demands. Your mind wasn't built to process all of this at once. Silently, stress accumulates and misconceptions slip through unfiltered.</p>
+      </div>
+      <div class="empathy-card reveal reveal-delay-2">
+        <div class="empathy-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+          <span class="material-symbols-outlined">cyclone</span>
+        </div>
+        <h3>The Silent Spiral</h3>
+        <p>You notice something feels off — a heaviness, irritability, exhaustion you can't explain. But life keeps moving. You push it aside. Days pass. The feeling grows quietly until you feel broken and can't even remember when or why it started.</p>
+      </div>
+      <div class="empathy-card empathy-card--anchor reveal reveal-delay-3">
+        <div class="empathy-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+          <span class="material-symbols-outlined">anchor</span>
+        </div>
+        <h3>The Anchor</h3>
+        <p>What if you could press pause every day and honestly ask: <em>"How do I actually feel right now?"</em><br/><br/>TheraNode captures that moment — your node. Week by week, it builds a living map of your mental landscape. By tagging entries with context like <strong>#Work</strong> or <strong>#Family</strong>, TheraNode reveals the correlations between your life events and your emotional state — helping you connect the dots yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-theranode {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-label {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px; color: var(--text-secondary); max-width: 560px; margin: 0 auto;
+  }
+  .empathy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .empathy-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 28px;
+    text-align: justify;
+    transition: all var(--transition);
+    position: relative;
+  }
+  .empathy-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--sage-300);
+  }
+  /* Highlight the solution card with a subtle green border */
+  .empathy-card--anchor {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: linear-gradient(180deg, var(--card) 0%, rgba(16, 185, 129, 0.04) 100%);
+  }
+  .empathy-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+  .empathy-icon .material-symbols-outlined { font-size: 28px; }
+  .empathy-card h3 {
+    font-size: 18px; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 12px;
+    text-align: center;
+  }
+  .empathy-card p {
+    font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+  }
+  .empathy-card em { font-style: italic; color: var(--primary-dark); }
+  .empathy-card strong { color: var(--primary-dark); font-weight: 600; }
+  @media (max-width: 768px) {
+    .empathy-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  }
+</style>

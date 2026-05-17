@@ -1,0 +1,134 @@
+---
+import treeImg from '../assets/TheraNode_tree_conceptA.webp';
+---
+
+<section class="tree-section">
+  <div class="container">
+    <div class="tree-inner reveal">
+      <div class="tree-text">
+        <h2 class="tree-heading">
+          <span class="tree-green">Simple on the surface.</span><br/>
+          <span class="tree-brown">Powerful underneath.</span>
+        </h2>
+        <p class="tree-desc">
+          TheraNode is designed for simplicity and ease of mind at the user interface level, 
+          while its powerful architecture works silently in the background — processing 
+          23 behavioral indicators, running correlation algorithms, and generating 
+          professional-grade insights from your honest daily check-ins.
+        </p>
+        <div class="tree-badges">
+          <div class="tree-badge">
+            <span class="material-symbols-outlined">picture_as_pdf</span>
+            Professional PDF Reports
+          </div>
+          <div class="tree-badge">
+            <span class="material-symbols-outlined">query_stats</span>
+            23 Precision Indicators
+          </div>
+          <div class="tree-badge">
+            <span class="material-symbols-outlined">encrypted</span>
+            AES-256 Encryption
+          </div>
+          <div class="tree-badge">
+            <span class="material-symbols-outlined">trending_up</span>
+            Long-Term Pattern Engine
+          </div>
+        </div>
+      </div>
+      <div class="tree-image">
+        <img src={treeImg.src} alt="TheraNode tree concept — simple interface above, powerful analytics engine below" class="tree-img" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tree-section {
+    padding: 80px 0;
+    background: var(--bg);
+  }
+  .tree-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .tree-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .tree-heading {
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .tree-green { color: var(--primary-dark); }
+  .tree-brown { color: #6b4f3a; }
+  .tree-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    text-align: justify;
+    max-width: 480px;
+    margin-bottom: 32px;
+  }
+  /* Small icon badges to fill the remaining space */
+  .tree-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 480px;
+  }
+  .tree-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--sage-50);
+    border: 1px solid var(--sage-200);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    transition: all var(--transition);
+  }
+  .tree-badge:hover {
+    background: var(--sage-100);
+    transform: translateY(-2px);
+  }
+  .tree-badge .material-symbols-outlined {
+    font-size: 18px;
+    color: var(--sage-500);
+  }
+  .tree-image {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tree-img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 12px 40px rgba(30, 41, 59, 0.1));
+    object-fit: contain;
+  }
+  @media (max-width: 768px) {
+    .tree-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 32px;
+    }
+    .tree-heading { text-align: center; }
+    .tree-desc { text-align: center; margin: 0 auto 24px; }
+    .tree-badges { justify-content: center; }
+    .tree-img { max-width: 300px; }
+  }
+</style>
