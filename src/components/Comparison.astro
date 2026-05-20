@@ -26,33 +26,33 @@ const comparisons = [
 <section class="comparison" id="comparison">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">The TheraNode Advantage</span>
-      <h2>Not Just Another Mood App</h2>
-      <p>See why TheraNode is the superior choice for anyone seeking real self-understanding and growth.</p>
+      <span class="section-label" data-i18n="comp.label">The TheraNode Advantage</span>
+      <h2 data-i18n="comp.h2">Not Just Another Mood App</h2>
+      <p data-i18n="comp.desc">See why TheraNode is the superior choice for anyone seeking real self-understanding and growth.</p>
     </div>
 
     <div class="table-container reveal reveal-delay-1">
       <table class="comparison-table">
         <thead>
           <tr>
-            <th class="feature-col">Key Features</th>
+            <th class="feature-col" data-i18n="comp.th1">Key Features</th>
             <th class="theranode-col">
               <span class="brand">TheraNode</span>
             </th>
-            <th class="competitor-col">Standard Wellness Apps</th>
+            <th class="competitor-col" data-i18n="comp.th2">Standard Wellness Apps</th>
           </tr>
         </thead>
         <tbody>
-          {comparisons.map((row) => (
+          {comparisons.map((row, i) => (
             <tr>
-              <td class="feature-name">{row.feature}</td>
+              <td class="feature-name" data-i18n={`comp.row${i + 1}.title`}>{row.feature}</td>
               <td class="theranode-cell">
                 <span class="material-symbols-outlined icon-check">check_circle</span>
-                {row.theranode}
+                <span data-i18n={`comp.row${i + 1}.tn`}>{row.theranode}</span>
               </td>
               <td class="competitor-cell">
                 <span class="material-symbols-outlined icon-close">cancel</span>
-                {row.competitor}
+                <span data-i18n={`comp.row${i + 1}.typ`}>{row.competitor}</span>
               </td>
             </tr>
           ))}

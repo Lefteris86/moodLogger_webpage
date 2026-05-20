@@ -28,9 +28,9 @@ const screens = [
 <section class="screenshots" id="screenshots">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">App Preview</span>
-      <h2>See TheraNode in Action</h2>
-      <p>Real screenshots from the application — no mockups, no placeholders.</p>
+      <span class="section-label" data-i18n="screen.label">App Preview</span>
+      <h2 data-i18n="screen.h2">See TheraNode in Action</h2>
+      <p data-i18n="screen.desc">Real screenshots from the application — no mockups, no placeholders.</p>
     </div>
     <div class="screenshot-scroll">
       <div class="screenshot-track">
@@ -39,7 +39,7 @@ const screens = [
             <div class="screenshot-phone">
               <Image src={s.img} alt={s.alt} width={260} height={520} class="screenshot-img" />
             </div>
-            <span class="screenshot-label">{s.label}</span>
+            <span class="screenshot-label" data-i18n={`screen.${i + 1}`}>{s.label}</span>
           </div>
         ))}
       </div>

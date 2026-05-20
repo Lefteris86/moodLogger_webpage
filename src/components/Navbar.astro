@@ -3,8 +3,6 @@ import { Image } from 'astro:assets';
 import logo from '../assets/TheraNode_Logo.webp';
 
 const base = import.meta.env.BASE_URL;
-// Ensure base ends with a slash for consistent concatenation if needed, though Astro usually provides it.
-// Actually, Astro's BASE_URL for GitHub Pages usually looks like '/moodLogger_webpage' (no trailing slash) or '/'
 const getPath = (path) => {
   if (base === '/') return path;
   return path.startsWith('/') ? `${base}${path}` : `${base}/${path}`;
@@ -19,23 +17,67 @@ const getPath = (path) => {
     </a>
 
     <div class="nav-links" id="nav-links">
-      <a href={getPath('/#features')}>Features</a>
-      <a href={getPath('/#how-it-works')}>How It Works</a>
-      <a href={getPath('/privacy')}>Privacy Policy</a>
-      <a href={getPath('/#safety')}>Safety</a>
-      <a href={getPath('/#screenshots')}>App Preview</a>
-      <a href={getPath('/#faq')}>FAQ</a>
+      <!-- Dropdown: Discover -->
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-expanded="false">
+          <span data-i18n="nav.discover">Discover</span>
+          <span class="material-symbols-outlined dd-arrow">expand_more</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href={getPath('/#features')}>
+            <span class="material-symbols-outlined">auto_awesome</span>
+            <span data-i18n="nav.features">Features</span>
+          </a>
+          <a href={getPath('/#how-it-works')}>
+            <span class="material-symbols-outlined">route</span>
+            <span data-i18n="nav.howItWorks">How It Works</span>
+          </a>
+          <a href={getPath('/#screenshots')}>
+            <span class="material-symbols-outlined">phone_iphone</span>
+            <span data-i18n="nav.appPreview">App Preview</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dropdown: Trust & Safety -->
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-expanded="false">
+          <span data-i18n="nav.trust">Trust & Safety</span>
+          <span class="material-symbols-outlined dd-arrow">expand_more</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href={getPath('/privacy')}>
+            <span class="material-symbols-outlined">policy</span>
+            <span data-i18n="nav.privacy">Privacy Policy</span>
+          </a>
+          <a href={getPath('/#safety')}>
+            <span class="material-symbols-outlined">health_and_safety</span>
+            <span data-i18n="nav.safety">Safety</span>
+          </a>
+          <a href={getPath('/#faq')}>
+            <span class="material-symbols-outlined">help_center</span>
+            <span data-i18n="nav.faq">FAQ</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct link: Contact -->
       <a href={getPath('/#contact')} class="nav-contact-link">
         <span class="material-symbols-outlined">mail</span>
-        Contact
+        <span data-i18n="nav.contact">Contact</span>
       </a>
+
+      <!-- Language Toggle -->
+      <button class="lang-toggle" aria-label="Toggle language">
+        <span class="lang-toggle-text"></span>
+      </button>
     </div>
 
     <a href="#" class="nav-cta" id="download-cta" target="_blank" rel="noopener noreferrer">
       <svg class="gplay-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
         <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33-2.935 1.695-2.345-2.345 2.978-2.68zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
       </svg>
-      Download App
+      <span data-i18n="nav.download">Download App</span>
     </a>
 
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
@@ -76,9 +118,10 @@ const getPath = (path) => {
   }
   .nav-links {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 28px;
   }
-  .nav-links a {
+  .nav-links > a {
     font-size: 13px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -86,7 +129,75 @@ const getPath = (path) => {
     text-transform: uppercase;
     transition: color var(--transition);
   }
-  .nav-links a:hover { color: var(--primary-dark); }
+  .nav-links > a:hover { color: var(--primary-dark); }
+
+  /* ── Dropdown ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color var(--transition);
+  }
+  .nav-dropdown-btn:hover { color: var(--primary-dark); }
+  .dd-arrow {
+    font-size: 18px !important;
+    transition: transform 0.25s ease;
+  }
+  .nav-dropdown.open .dd-arrow { transform: rotate(180deg); }
+
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 40px rgba(30, 41, 59, 0.12);
+    padding: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+    opacity: 1;
+  }
+  .nav-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    transition: background var(--transition), color var(--transition);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .nav-dropdown-menu a:hover {
+    background: var(--sage-50);
+    color: var(--primary-dark);
+  }
+  .nav-dropdown-menu .material-symbols-outlined {
+    font-size: 20px;
+    color: var(--sage-500);
+  }
+
   .nav-cta {
     font-size: 13px;
     font-weight: 600;
@@ -95,16 +206,38 @@ const getPath = (path) => {
     padding: 10px 24px;
     border-radius: 100px;
     transition: background var(--transition), transform var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
   .nav-cta:hover { background: var(--sage-700); transform: translateY(-1px); }
-  .nav-cta { display: inline-flex; align-items: center; gap: 8px; }
   .gplay-icon { flex-shrink: 0; }
+
   .nav-contact-link {
     display: inline-flex !important;
     align-items: center;
     gap: 4px;
   }
   .nav-contact-link .material-symbols-outlined { font-size: 16px; }
+
+  /* ── Language Toggle ── */
+  .lang-toggle {
+    background: rgba(144, 193, 167, 0.1);
+    border: 1px solid var(--sage-200);
+    border-radius: 100px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lang-toggle:hover {
+    background: rgba(144, 193, 167, 0.2);
+    transform: translateY(-1px);
+  }
 
   .nav-hamburger {
     display: none;
@@ -135,9 +268,63 @@ const getPath = (path) => {
       right: 0;
       background: var(--card);
       padding: 24px;
-      gap: 20px;
+      gap: 8px;
       border-bottom: 1px solid var(--card-border);
       box-shadow: var(--shadow-card);
     }
+    /* On mobile, dropdowns expand inline */
+    .nav-dropdown-menu {
+      position: static;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      padding: 0 0 0 16px;
+      background: transparent;
+    }
+    .nav-dropdown.open .nav-dropdown-menu {
+      display: flex;
+      flex-direction: column;
+    }
   }
 </style>
+
+<script>
+  // ── Navbar scroll effect ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ── Hamburger toggle ──
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger?.addEventListener('click', () => {
+    navLinks?.classList.toggle('open');
+  });
+
+  // ── Dropdown toggle ──
+  document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const dropdown = btn.parentElement;
+      const isOpen = dropdown?.classList.contains('open');
+      // Close all dropdowns first
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      // Toggle clicked one
+      if (!isOpen) dropdown?.classList.add('open');
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+  });
+
+  // Close dropdowns when a menu link is clicked
+  document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      navLinks?.classList.remove('open'); // also close mobile menu
+    });
+  });
+</script>

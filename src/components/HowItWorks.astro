@@ -38,9 +38,9 @@ const steps = [
 <section class="how-it-works" id="how-it-works">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">How It Works</span>
-      <h2>Two Minutes a Day. A Lifetime of Clarity.</h2>
-      <p>No expertise needed. No lengthy journals. Just honest check-ins that add up to something powerful.</p>
+      <span class="section-label" data-i18n="how.label">How It Works</span>
+      <h2 data-i18n="how.h2">Two Minutes a Day. A Lifetime of Clarity.</h2>
+      <p data-i18n="how.desc">No expertise needed. No lengthy journals. Just honest check-ins that add up to something powerful.</p>
     </div>
     <div class="steps-grid">
       {steps.map((s, i) => (
@@ -49,8 +49,8 @@ const steps = [
           <div class="step-icon" style={`background: ${s.color}; color: ${s.iconColor}`}>
             <span class="material-symbols-outlined">{s.icon}</span>
           </div>
-          <h3>{s.title}</h3>
-          <p>{s.desc}</p>
+          <h3 data-i18n={`how.step${i + 1}.title`}>{s.title}</h3>
+          <p data-i18n={`how.step${i + 1}.desc`}>{s.desc}</p>
           {i < steps.length - 1 && (
             <div class="step-arrow" aria-hidden="true">
               <span class="material-symbols-outlined">arrow_forward</span>

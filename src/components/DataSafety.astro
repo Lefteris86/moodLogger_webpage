@@ -12,10 +12,10 @@ const badges = [
 <section class="data-safety">
   <div class="container">
     <div class="safety-strip">
-      {badges.map((b) => (
+      {badges.map((b, i) => (
         <div class="safety-badge reveal">
           <span class="material-symbols-outlined">{b.icon}</span>
-          <span class="badge-label">{b.label}</span>
+          <span class="badge-label" data-i18n={`safety.badge${i + 1}`}>{b.label}</span>
         </div>
       ))}
     </div>

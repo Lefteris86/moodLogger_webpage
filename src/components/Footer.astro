@@ -7,17 +7,30 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-top">
-      <div class="footer-brand">
-        <Image src={logo} alt="TheraNode" width={32} height={32} class="footer-logo" />
-        <span class="footer-wordmark">TheraNode</span>
+      <div class="footer-brand-block">
+        <div class="footer-brand">
+          <Image src={logo} alt="TheraNode" width={32} height={32} class="footer-logo" />
+          <span class="footer-wordmark">TheraNode</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">Your Daily Mental Companion</p>
+        <p class="footer-made" data-i18n="footer.made">Made with care for your mental well-being.</p>
       </div>
-      <div class="footer-links">
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#safety">Safety</a>
-        <a href="#screenshots">App Preview</a>
-        <a href="#faq">FAQ</a>
+
+      <div class="footer-trust-badges">
+        <div class="trust-badge">
+          <span class="material-symbols-outlined">lock</span>
+          <span data-i18n="footer.badge1">100% Private</span>
+        </div>
+        <div class="trust-badge">
+          <span class="material-symbols-outlined">wifi_off</span>
+          <span data-i18n="footer.badge2">Offline-First</span>
+        </div>
+        <div class="trust-badge">
+          <span class="material-symbols-outlined">encrypted</span>
+          <span data-i18n="footer.badge3">AES-256 Encrypted</span>
+        </div>
       </div>
+
       <div class="footer-contact">
         <a href="mailto:theranode.info@gmail.com" class="footer-email">
           <span class="material-symbols-outlined">mail</span>
@@ -25,30 +38,45 @@ const year = new Date().getFullYear();
         </a>
       </div>
     </div>
+
     <div class="footer-divider"></div>
+
     <div class="footer-bottom">
-      <p class="footer-copy">&copy; {year} TheraNode. All rights reserved.</p>
-      <p class="footer-disclaimer">
+      <p class="footer-copy"><span data-i18n="footer.copy">&copy; {year} TheraNode. All rights reserved.</span></p>
+      <p class="footer-disclaimer" data-i18n="footer.disclaimer">
         Disclaimer: TheraNode is a self-monitoring tool and not a substitute for professional medical advice, diagnosis, or treatment.
         Always consult a qualified healthcare professional for medical advice.
       </p>
     </div>
   </div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+  </button>
 </footer>
 
 <style>
-  .site-footer { background: var(--sage-900); color: rgba(255,255,255,0.7); padding: 48px 0 32px; }
+  .site-footer { background: var(--sage-900); color: rgba(255,255,255,0.7); padding: 48px 0 32px; position: relative; }
   .footer-top {
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 32px;
   }
+  .footer-brand-block { display: flex; flex-direction: column; gap: 6px; }
   .footer-brand { display: flex; align-items: center; gap: 10px; }
   .footer-logo { border-radius: 6px; }
   .footer-wordmark { font-size: 18px; font-weight: 700; color: #fff; }
-  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-  .footer-links a {
-    font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.5); transition: color var(--transition);
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); font-style: italic; }
+
+  .footer-trust-badges { display: flex; gap: 16px; flex-wrap: wrap; }
+  .trust-badge {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5);
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    letter-spacing: 0.02em;
   }
-  .footer-links a:hover { color: var(--primary); }
+  .trust-badge .material-symbols-outlined { font-size: 16px; color: var(--primary); }
+
   .footer-contact { display: flex; align-items: center; }
   .footer-email {
     display: flex; align-items: center; gap: 8px; font-size: 13px;
@@ -56,11 +84,58 @@ const year = new Date().getFullYear();
   }
   .footer-email:hover { color: var(--primary); }
   .footer-email .material-symbols-outlined { font-size: 16px; }
+
   .footer-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 32px 0 24px; }
+
   .footer-bottom { display: flex; flex-direction: column; gap: 8px; }
   .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
-  .footer-disclaimer { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.5; max-width: 640px; }
+  .footer-made { font-size: 12px; color: rgba(255,255,255,0.3); font-style: italic; }
+  .footer-disclaimer { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.6; max-width: 640px; }
+
+  /* Back to top button */
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-dark);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 16px rgba(30, 41, 59, 0.2);
+    z-index: 50;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .back-to-top:hover {
+    background: var(--sage-700);
+    transform: translateY(-3px);
+  }
+  .back-to-top .material-symbols-outlined { font-size: 24px; }
+
   @media (max-width: 700px) {
     .footer-top { flex-direction: column; align-items: flex-start; }
+    .footer-trust-badges { gap: 10px; }
+    .back-to-top { bottom: 20px; right: 20px; }
   }
 </style>
+
+<script>
+  const backBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    backBtn?.classList.toggle('visible', window.scrollY > 600);
+  });
+  backBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

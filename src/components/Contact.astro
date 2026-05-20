@@ -5,9 +5,9 @@
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">Get in Touch</span>
-      <h2>Contact Us</h2>
-      <p>Have a question, suggestion, or found a bug? Send us a message and we'll get back to you.</p>
+      <span class="section-label" data-i18n="contact.label">Get in Touch</span>
+      <h2 data-i18n="contact.h2">Contact Us</h2>
+      <p data-i18n="contact.desc">Have a question, suggestion, or found a bug? Send us a message and we'll get back to you.</p>
     </div>
 
     <div class="contact-card reveal reveal-delay-1">
@@ -15,22 +15,22 @@
         <div class="info-item">
           <span class="material-symbols-outlined">mail</span>
           <div>
-            <h4>Email</h4>
+            <h4 data-i18n="contact.email">Email</h4>
             <a href="mailto:theranode.info@gmail.com">theranode.info@gmail.com</a>
           </div>
         </div>
         <div class="info-item">
           <span class="material-symbols-outlined">shield</span>
           <div>
-            <h4>Privacy First</h4>
-            <p>We never ask for your app data. Support inquiries are handled via email only.</p>
+            <h4 data-i18n="contact.privacy">Privacy First</h4>
+            <p data-i18n="contact.privacyDesc">We never ask for your app data. Support inquiries are handled via email only.</p>
           </div>
         </div>
         <div class="info-item">
           <span class="material-symbols-outlined">schedule</span>
           <div>
-            <h4>Response Time</h4>
-            <p>We typically respond within 24–48 hours.</p>
+            <h4 data-i18n="contact.time">Response Time</h4>
+            <p data-i18n="contact.timeDesc">We typically respond within 24–48 hours.</p>
           </div>
         </div>
       </div>
@@ -47,29 +47,29 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required />
+            <label for="name" data-i18n="contact.form.name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" data-i18n-placeholder="contact.form.namePlaceholder" required />
           </div>
           <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            <label for="email" data-i18n="contact.form.email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" data-i18n-placeholder="contact.form.emailPlaceholder" required />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="category">Category</label>
+          <label for="category" data-i18n="contact.form.category">Category</label>
           <select id="category" name="category">
-            <option value="General Question">General Question</option>
-            <option value="Bug Report">Bug Report</option>
-            <option value="Feature Request">Feature Request</option>
-            <option value="Therapist Inquiry">Therapist Inquiry</option>
-            <option value="Other">Other</option>
+            <option value="General Question" data-i18n="contact.form.cat1">General Question</option>
+            <option value="Bug Report" data-i18n="contact.form.cat2">Bug Report</option>
+            <option value="Feature Request" data-i18n="contact.form.cat3">Feature Request</option>
+            <option value="Therapist Inquiry" data-i18n="contact.form.cat4">Therapist Inquiry</option>
+            <option value="Other" data-i18n="contact.form.cat5">Other</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Describe your question or issue..." required></textarea>
+          <label for="message" data-i18n="contact.form.message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Describe your question or issue..." data-i18n-placeholder="contact.form.messagePlaceholder" required></textarea>
         </div>
 
 
@@ -78,7 +78,7 @@
 
         <button type="submit" class="form-submit" id="form-submit">
           <span class="material-symbols-outlined">send</span>
-          Send Message
+          <span data-i18n="contact.form.submit">Send Message</span>
         </button>
 
         <!-- Success / error feedback -->
@@ -218,13 +218,13 @@
     const hcaptchaToken = form.querySelector<HTMLInputElement>('[name="h-captcha-response"]');
     if (!hcaptchaToken?.value) {
       feedback.className = 'form-feedback error';
-      feedback.innerHTML = '⚠️ Please complete the captcha verification before sending.';
+      feedback.innerHTML = '<span data-i18n="contact.form.error">⚠️ Please complete the captcha verification before sending.</span>';
       feedback.style.display = 'block';
       return;
     }
 
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> Sending...';
+    submitBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> <span data-i18n="contact.form.sending">Sending...</span>';
     feedback.style.display = 'none';
 
     try {
@@ -241,7 +241,7 @@
 
       if (data.success) {
         feedback.className = 'form-feedback success';
-        feedback.innerHTML = '✅ Message sent successfully! We\'ll get back to you soon.';
+        feedback.innerHTML = '<span data-i18n="contact.form.success">✅ Message sent successfully! We\'ll get back to you soon.</span>';
         feedback.style.display = 'block';
         form.reset();
         // Reset hCaptcha widget
@@ -251,11 +251,11 @@
       }
     } catch (err) {
       feedback.className = 'form-feedback error';
-      feedback.innerHTML = '❌ Something went wrong. Please try emailing us directly at theranode.info@gmail.com';
+      feedback.innerHTML = '<span data-i18n="contact.form.error2">❌ Something went wrong. Please try emailing us directly at theranode.info@gmail.com</span>';
       feedback.style.display = 'block';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Send Message';
+      submitBtn.innerHTML = '<span class="material-symbols-outlined">send</span> <span data-i18n="contact.form.submit">Send Message</span>';
     }
   });
 </script>

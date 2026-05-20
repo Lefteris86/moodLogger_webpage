@@ -29,26 +29,26 @@ const categories = [
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">Support</span>
-      <h2>Common Questions</h2>
-      <p>Everything you need to know about using TheraNode.</p>
+      <span class="section-label" data-i18n="faq.label">Support</span>
+      <h2 data-i18n="faq.h2">Common Questions</h2>
+      <p data-i18n="faq.desc">Everything you need to know about using TheraNode.</p>
     </div>
 
     {categories.map((cat, ci) => (
       <div class="faq-category reveal">
         <div class="faq-cat-header">
           <span class="material-symbols-outlined">{cat.icon}</span>
-          <h3>{cat.label}</h3>
+          <h3 data-i18n="faq.label">{cat.label}</h3>
         </div>
         <div class="faq-list">
           {cat.items.map((item, i) => (
             <div class="faq-item" data-faq>
               <button class="faq-trigger" aria-expanded="false">
-                <span class="faq-question">{item.q}</span>
+                <span class="faq-question" data-i18n={`faq.q${i + 1}`}>{item.q}</span>
                 <span class="material-symbols-outlined faq-chevron">expand_more</span>
               </button>
               <div class="faq-answer">
-                <p>{item.a}</p>
+                <p data-i18n={`faq.a${i + 1}`}>{item.a}</p>
               </div>
             </div>
           ))}

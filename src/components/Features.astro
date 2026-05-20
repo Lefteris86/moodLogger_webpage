@@ -27,9 +27,9 @@ const pillars = [
 <section class="features" id="features">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">What You Get</span>
-      <h2>Simple Tools. Profound Clarity.</h2>
-      <p>Everything you need to understand yourself better — in under 2 minutes a day.</p>
+      <span class="section-label" data-i18n="features.label">Core Features</span>
+      <h2 data-i18n="features.h2">Simple Tools. Profound Clarity.</h2>
+      <p data-i18n="features.desc">Everything you need to understand your mind, built with privacy as the foundation.</p>
     </div>
     <div class="pillars-grid">
       {pillars.map((p, i) => (
@@ -37,8 +37,8 @@ const pillars = [
           <div class="pillar-icon" style={`background: ${p.color}; color: ${p.iconColor}`}>
             <span class="material-symbols-outlined">{p.icon}</span>
           </div>
-          <h3>{p.title}</h3>
-          <p>{p.desc}</p>
+          <h3 data-i18n={`features.card${i + 1}.title`}>{p.title}</h3>
+          <p data-i18n={`features.card${i + 1}.desc`}>{p.desc}</p>
         </div>
       ))}
     </div>

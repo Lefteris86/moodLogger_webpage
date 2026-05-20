@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="TheraNode — Πολιτική Απορρήτου" description="Πολιτική Απορρήτου TheraNode. Αποθηκεύουμε όλα τα δεδομένα τοπικά στη συσκευή σας. Χωρίς διακομιστές, χωρίς λογαριασμούς, χωρίς αναλυτικά στοιχεία.">
+  <Navbar />
+  <main class="privacy-page">
+    <div class="container">
+      <article class="privacy-content reveal">
+
+        <h1>Πολιτική Απορρήτου</h1>
+        <p class="meta">Ημερομηνία Ισχύος: 5 Μαΐου 2026 &middot; Τελευταία Ενημέρωση: Μάιος 2026</p>
+
+        <hr />
+
+        <section>
+          <h2>1. Εισαγωγή</h2>
+          <p>Το TheraNode ("η Εφαρμογή") είναι ένας προσωπικός σύντροφος ψυχικής ευεξίας που αναπτύχθηκε από τον Ελευθέριο Κωστούλα. Αυτή η Πολιτική Απορρήτου εξηγεί πώς η Εφαρμογή χειρίζεται τις πληροφορίες σας.</p>
+          <div class="callout">
+            <span class="material-symbols-outlined">info</span>
+            <p><strong>Η σύντομη εκδοχή:</strong> Το TheraNode αποθηκεύει όλα τα δεδομένα τοπικά στη συσκευή σας. Δεν συλλέγουμε, δε μεταδίδουμε και δεν έχουμε πρόσβαση σε καμία από τις προσωπικές σας πληροφορίες. Δεν έχουμε διακομιστές, ούτε λογαριασμούς, ούτε αναλυτικά στοιχεία.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>2. Πληροφορίες που ΔΕΝ Συλλέγουμε</h2>
+          <p>Το TheraNode <strong>δεν</strong> συλλέγει, δε μεταδίδει ούτε επεξεργάζεται κανένα από τα ακόλουθα:</p>
+          <ul>
+            <li>Προσωπικές πληροφορίες ταυτοποίησης (όνομα, email, αριθμός τηλεφώνου)</li>
+            <li>Αναγνωριστικά συσκευής (IMEI, advertising ID, hardware serial)</li>
+            <li>Δεδομένα τοποθεσίας</li>
+            <li>Αναλυτικά στοιχεία χρήσης ή δεδομένα συμπεριφοράς</li>
+            <li>Αναφορές σφαλμάτων (αποθηκεύονται μόνο τοπικά — δείτε την Ενότητα 5)</li>
+            <li>Οποιαδήποτε δεδομένα μέσω SDK τρίτων, διαφημίσεων ή παρακολούθησης</li>
+          </ul>
+          <p><strong>Δεν έχουμε διακομιστές.</strong> Δεν υπάρχει υποδομή backend, ούτε αποθήκευση στο cloud, ούτε επικοινωνία δικτύου οποιουδήποτε είδους (εκτός από την κλήση για έκτακτη ανάγκη — δείτε την Ενότητα 6).</p>
+        </section>
+
+        <section>
+          <h2>3. Πληροφορίες που Αποθηκεύονται Τοπικά στη Συσκευή σας</h2>
+          <p>Η Εφαρμογή αποθηκεύει τα ακόλουθα δεδομένα <strong>αποκλειστικά στη συσκευή σας</strong>, στον ιδιωτικό χώρο αποθήκευσης της εφαρμογής:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Δεδομένα</th><th>Σκοπός</th><th>Κρυπτογράφηση</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Καθημερινά αρχεία καταγραφής</td><td>Βασική λειτουργία παρακολούθησης</td><td>✅ AES-256-CBC</td></tr>
+                <tr><td>Προσωπικές σημειώσεις</td><td>Σκέψεις που εισάγει ο χρήστης</td><td>✅ AES-256-CBC</td></tr>
+                <tr><td>Προφίλ χρήστη</td><td>Εξατομίκευση και ειδοποιήσεις κρίσης</td><td>✅ AES-256-CBC</td></tr>
+                <tr><td>PIN</td><td>Έλεγχος ταυτότητας για πρόσβαση</td><td>✅ SHA-256 hash με salt</td></tr>
+                <tr><td>Ερώτηση ασφαλείας</td><td>Ανάκτηση λογαριασμού</td><td>✅ Ασφαλής αποθήκευση συστήματος</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Δεν μπορούμε να αποκτήσουμε πρόσβαση σε αυτά τα δεδομένα.</strong> Υπάρχουν μόνο στη συσκευή σας και δεν μεταδίδονται ποτέ πουθενά.</p>
+        </section>
+
+        <section>
+          <h2>4. Ασφάλεια Δεδομένων</h2>
+          <p>Όλα τα δεδομένα ευεξίας κρυπτογραφούνται κατά την αποθήκευση με <strong>AES-256-CBC</strong> με ένα μοναδικό κλειδί κρυπτογράφησης που αποθηκεύεται στο ασφαλές hardware της συσκευής σας (Android Keystore ή iOS Keychain). Το PIN σας δεν αποθηκεύεται ποτέ σε απλό κείμενο — κατακερματίζεται (hashed) με χρήση SHA-256 και μοναδικό salt ανά χρήστη.</p>
+          <p>Η Εφαρμογή περιλαμβάνει προστασία από επιθέσεις brute-force με εκθετικό κλείδωμα μετά από αποτυχημένες προσπάθειες εισαγωγής PIN.</p>
+        </section>
+
+        <section>
+          <h2>5. Αναφορές Σφαλμάτων</h2>
+          <p>Εάν η Εφαρμογή αντιμετωπίσει ένα απροσδόκητο σφάλμα, γράφει ένα αρχείο καταγραφής σφαλμάτων σε ένα τοπικό αρχείο στη συσκευή σας που περιέχει χρονοσήμανση, πληροφορίες λειτουργικού συστήματος και τεχνική περιγραφή σφάλματος. Οι αναφορές σφαλμάτων <strong>δεν</strong> περιέχουν κανένα από τα δεδομένα ευεξίας, τις σημειώσεις ή τις προσωπικές σας πληροφορίες. Αποθηκεύονται τοπικά και δεν αποστέλλονται ποτέ αυτόματα.</p>
+          <p>Μπορείτε να επιλέξετε να μοιραστείτε εθελοντικά αναφορές σφαλμάτων μαζί μας μέσω της λειτουργίας κοινοποίησης της συσκευής σας (π.χ. email) εάν επιθυμείτε να αναφέρετε ένα πρόβλημα. Αυτό είναι εντελώς προαιρετικό.</p>
+        </section>
+
+        <section>
+          <h2>6. Δικαιώματα (Permissions)</h2>
+          <p>Η Εφαρμογή ζητά ένα δικαίωμα:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Δικαίωμα</th><th>Σκοπός</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>READ_PHONE_STATE</code> (μόνο στο Android)</td>
+                  <td>Χρησιμοποιείται αποκλειστικά για την επαλήθευση της συνδεσιμότητας κινητής τηλεφωνίας πριν προσφέρει κουμπιά κλήσης έκτακτης ανάγκης. <strong>Δεν διαβάζουμε, αποθηκεύουμε ή μεταδίδουμε τον αριθμό τηλεφώνου σας, το IMEI, τις πληροφορίες SIM ή το ιστορικό κλήσεων σας.</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>7. Λειτουργία Ασφάλειας Κρίσης (Crisis Safety Feature)</h2>
+          <p>Όταν η Εφαρμογή ανιχνεύσει αυξημένους δείκτες δυσφορίας ή αυτοβλάβης, μπορεί να εμφανίσει έναν διάλογο έκτακτης ανάγκης που προσφέρει να καλέσει τον θεραπευτή σας ή τη γραμμή κρίσης της χώρας σας. Αυτή η λειτουργία:</p>
+          <ul>
+            <li>Χρησιμοποιεί τον τυπικό dialer (μέσω <code>tel:</code>) — η Εφαρμογή δεν πραγματοποιεί κλήσεις απευθείας</li>
+            <li>Απαιτεί να επιβεβαιώσετε την κλήση στην εφαρμογή τηλεφώνου της συσκευής σας</li>
+            <li>Δεν καταγράφει αν πραγματοποιήθηκε κλήση</li>
+            <li>Λειτουργεί εντελώς offline — δεν αποστέλλονται δεδομένα σε κανέναν διακομιστή</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Εξαγωγή και Αντίγραφα Ασφαλείας</h2>
+          <p>Η Εφαρμογή σας επιτρέπει να:</p>
+          <ul>
+            <li><strong>Εξάγετε μια αναφορά PDF</strong> — Δημιουργείται τοπικά, κοινοποιείται μέσω του share sheet της συσκευής σας</li>
+            <li><strong>Εξάγετε ακατέργαστα δεδομένα JSON</strong> — Δημιουργείται τοπικά, κοινοποιείται μέσω του share sheet της συσκευής σας</li>
+            <li><strong>Δημιουργήσετε ένα κρυπτογραφημένο αντίγραφο ασφαλείας</strong> — Προστατεύεται με κωδικό πρόσβασης που επιλέγετε εσείς</li>
+          </ul>
+          <p>Όλες οι εξαγωγές δημιουργούνται στη συσκευή. Δεν λαμβάνουμε ποτέ αντίγραφα των εξαγωγών σας.</p>
+        </section>
+
+        <section>
+          <h2>9. Διατήρηση και Διαγραφή Δεδομένων</h2>
+          <p>Δεδομένου ότι όλα τα δεδομένα αποθηκεύονται τοπικά στη συσκευή σας:</p>
+          <ul>
+            <li><strong>Για να διαγράψετε όλα τα δεδομένα:</strong> Απεγκαταστήστε την Εφαρμογή ή διαγράψτε τα δεδομένα της Εφαρμογής μέσω των Ρυθμίσεων της συσκευής σας → Εφαρμογές → TheraNode → Εκκαθάριση Δεδομένων.</li>
+            <li><strong>Τα δεδομένα δεν διατηρούνται ποτέ από εμάς</strong> επειδή δεν τα λαμβάνουμε ποτέ εξαρχής.</li>
+            <li><strong>Τα αντίγραφα ασφαλείας</strong> που δημιουργείτε αποθηκεύονται όπου επιλέγετε. Είστε υπεύθυνοι για τη διαχείριση και τη διαγραφή αυτών των αντιγράφων.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>10. Απόρρητο Ανηλίκων</h2>
+          <p>Το TheraNode δεν απευθύνεται σε παιδιά κάτω των 13 ετών. Δεν συλλέγουμε εν γνώσει μας πληροφορίες από παιδιά. Εφόσον η Εφαρμογή δεν συλλέγει δεδομένα από κανέναν χρήστη, αυτή η ανησυχία μετριάζεται εγγενώς.</p>
+        </section>
+
+        <section>
+          <h2>11. Υπηρεσίες Τρίτων</h2>
+          <p>Το TheraNode <strong>δεν</strong> ενσωματώνει υπηρεσίες, SDK ή API τρίτων που συλλέγουν δεδομένα χρηστών. Δεν υπάρχουν:</p>
+          <ul>
+            <li>Υπηρεσίες ανάλυσης (π.χ. Google Analytics, Firebase Analytics)</li>
+            <li>Δίκτυα διαφημίσεων</li>
+            <li>Ενσωματώσεις κοινωνικών δικτύων</li>
+            <li>Υπηρεσίες αποθήκευσης στο cloud</li>
+            <li>Υπηρεσίες αναφοράς σφαλμάτων (π.χ. Crashlytics, Sentry)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>12. Αλλαγές σε Αυτήν την Πολιτική Απορρήτου</h2>
+          <p>Μπορεί να ενημερώνουμε αυτήν την Πολιτική Απορρήτου από καιρό σε καιρό. Οποιεσδήποτε αλλαγές θα αντικατοπτρίζονται με την ενημέρωση της ημερομηνίας "Τελευταία Ενημέρωση" στην κορυφή. Επειδή δεν έχουμε τρόπο να επικοινωνήσουμε απευθείας μαζί σας, οι αλλαγές θα δημοσιεύονται στο URL που συνδέεται από την καταχώριση στο Google Play Store.</p>
+        </section>
+
+        <section>
+          <h2>13. Επικοινωνήστε Μαζί μας</h2>
+          <p>Εάν έχετε ερωτήσεις ή ανησυχίες σχετικά με αυτήν την Πολιτική Απορρήτου, παρακαλούμε επικοινωνήστε μαζί μας στο:</p>
+          <p><strong>Email:</strong> <a href="mailto:theranode.info@gmail.com">theranode.info@gmail.com</a></p>
+        </section>
+
+        <section class="summary-section">
+          <h2>14. Σύνοψη</h2>
+          <div class="table-wrap">
+            <table class="summary-table">
+              <thead>
+                <tr><th>Ερώτηση</th><th>Απάντηση</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Συλλέγετε προσωπικά δεδομένα;</td><td><strong>Όχι</strong></td></tr>
+                <tr><td>Μεταδίδετε δεδομένα σε οποιονδήποτε διακομιστή;</td><td><strong>Όχι</strong></td></tr>
+                <tr><td>Χρησιμοποιείτε αναλυτικά στοιχεία (analytics) ή παρακολούθηση;</td><td><strong>Όχι</strong></td></tr>
+                <tr><td>Μοιράζεστε δεδομένα με τρίτους;</td><td><strong>Όχι</strong></td></tr>
+                <tr><td>Είναι κρυπτογραφημένα τα αποθηκευμένα δεδομένα;</td><td><strong>Ναι — AES-256-CBC</strong></td></tr>
+                <tr><td>Μπορείτε να έχετε πρόσβαση στα δεδομένα μου;</td><td><strong>Όχι — δεν έχουμε διακομιστές</strong></td></tr>
+                <tr><td>Πώς μπορώ να διαγράψω τα δεδομένα μου;</td><td><strong>Απεγκαταστήστε την εφαρμογή ή εκκαθαρίστε τα δεδομένα</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <p class="footer-note">Αυτή η πολιτική απορρήτου ισχύει για την έκδοση TheraNode 1.0 και νεότερη, διαθέσιμη στο Google Play.<br/>Αναγνωριστικό εφαρμογής (Application ID): com.theranode.app</p>
+
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .privacy-page {
+    padding: 100px 0 80px;
+    background: var(--bg);
+    min-height: 100vh;
+  }
+  .privacy-content {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 48px 48px 40px;
+    box-shadow: var(--shadow-card);
+  }
+  .privacy-content h1 {
+    font-size: 32px; font-weight: 800; color: var(--primary-dark);
+    letter-spacing: -0.03em; margin-bottom: 8px;
+  }
+  .meta { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  hr { border: none; border-top: 1px solid var(--card-border); margin: 28px 0; }
+  section { margin-bottom: 32px; }
+  section h2 {
+    font-size: 18px; font-weight: 700; color: var(--text-primary);
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--sage-100);
+  }
+  section p { font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 12px; }
+  section ul { padding-left: 24px; margin-bottom: 12px; }
+  section li { font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 6px; }
+  code {
+    background: var(--sage-50); padding: 2px 6px; border-radius: 4px;
+    font-size: 13px; color: var(--primary-dark);
+  }
+  a { color: var(--primary-dark); text-decoration: underline; transition: color var(--transition); }
+  a:hover { color: var(--accent); }
+  .callout {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--sage-50); border-left: 3px solid var(--primary-dark);
+    padding: 16px 20px; border-radius: 0 var(--radius) var(--radius) 0; margin: 16px 0;
+  }
+  .callout .material-symbols-outlined { font-size: 20px; color: var(--primary-dark); flex-shrink: 0; margin-top: 2px; }
+  .callout p { margin: 0; }
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    text-align: left; padding: 10px 14px; background: var(--sage-50);
+    font-weight: 700; color: var(--text-primary); border-bottom: 2px solid var(--sage-200);
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--card-border); color: var(--text-secondary); }
+  .summary-table td:last-child { font-weight: 700; color: var(--accent); }
+  .footer-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 32px; }
+  @media (max-width: 600px) {
+    .privacy-content { padding: 28px 20px; }
+  }
+</style>
+
+<script>
+  // Scroll reveal for this page
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Navbar scroll shadow
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar?.classList.toggle('scrolled', window.scrollY > 20); });
+
+  // Mobile hamburger
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger?.addEventListener('click', () => { navLinks?.classList.toggle('open'); });
+  navLinks?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks?.classList.remove('open'));
+  });
+</script>
