@@ -67,10 +67,22 @@ const getPath = (path) => {
         <span data-i18n="nav.contact">Contact</span>
       </a>
 
-      <!-- Language Toggle -->
-      <button class="lang-toggle" aria-label="Toggle language">
-        <span class="lang-toggle-text"></span>
-      </button>
+      <!-- Language Dropdown -->
+      <div class="nav-dropdown lang-dropdown">
+        <button class="nav-dropdown-btn" aria-expanded="false" id="lang-dropdown-btn">
+          <span id="lang-flag-current">🇬🇧</span>
+          <span data-i18n="nav.language">Language</span>
+          <span class="material-symbols-outlined dd-arrow">expand_more</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="#" class="lang-option" data-lang="en">
+            <span>🇬🇧 English</span>
+          </a>
+          <a href="#" class="lang-option" data-lang="el">
+            <span>🇬🇷 Ελληνικά</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <a href="#" class="nav-cta" id="download-cta" target="_blank" rel="noopener noreferrer">
@@ -220,23 +232,31 @@ const getPath = (path) => {
   }
   .nav-contact-link .material-symbols-outlined { font-size: 16px; }
 
-  /* ── Language Toggle ── */
-  .lang-toggle {
+  /* ── Language Dropdown Specific ── */
+  .lang-dropdown .nav-dropdown-btn {
     background: rgba(144, 193, 167, 0.1);
     border: 1px solid var(--sage-200);
     border-radius: 100px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-    transition: all var(--transition);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    padding: 6px 14px;
   }
-  .lang-toggle:hover {
+  .lang-dropdown .nav-dropdown-btn:hover {
     background: rgba(144, 193, 167, 0.2);
-    transform: translateY(-1px);
+  }
+  #lang-flag-current {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background var(--transition);
+  }
+  .lang-option:hover {
+    background: var(--sage-50);
   }
 
   .nav-hamburger {

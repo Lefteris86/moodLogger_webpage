@@ -11,12 +11,15 @@ export function initLanguage() {
   applyTranslations();
   updateDocumentLang();
   
-  // Set up toggle buttons if they exist
-  const toggles = document.querySelectorAll('.lang-toggle');
-  toggles.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Set up dropdown options
+  const options = document.querySelectorAll('.lang-option');
+  options.forEach(opt => {
+    opt.addEventListener('click', (e) => {
       e.preventDefault();
-      toggleLanguage();
+      const lang = opt.getAttribute('data-lang');
+      if (lang && lang !== currentLang) {
+        setLanguage(lang);
+      }
     });
   });
   
@@ -24,8 +27,8 @@ export function initLanguage() {
   updateToggleText();
 }
 
-export function toggleLanguage() {
-  currentLang = currentLang === 'en' ? 'el' : 'en';
+export function setLanguage(lang) {
+  currentLang = lang;
   localStorage.setItem('lang', currentLang);
   
   // Handle privacy page redirection
@@ -86,14 +89,9 @@ function updateDocumentLang() {
 }
 
 function updateToggleText() {
-  const toggles = document.querySelectorAll('.lang-toggle-text');
-  toggles.forEach(el => {
-    // Show the language that clicking will switch TO, or show both with the active one highlighted
-    if (currentLang === 'en') {
-      el.innerHTML = '<span style="color:var(--primary-dark)">🇬🇧 EN</span> <span style="opacity:0.5">|</span> <span style="opacity:0.5">🇬🇷 EL</span>';
-    } else {
-      el.innerHTML = '<span style="opacity:0.5">🇬🇧 EN</span> <span style="opacity:0.5">|</span> <span style="color:var(--primary-dark)">🇬🇷 EL</span>';
-    }
+  const flags = document.querySelectorAll('#lang-flag-current');
+  flags.forEach(el => {
+    el.textContent = currentLang === 'en' ? '🇬🇧' : '🇬🇷';
   });
 }
 

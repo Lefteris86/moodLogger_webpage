@@ -10,6 +10,7 @@ export const translations = {
     "nav.safety": "Safety",
     "nav.faq": "FAQ",
     "nav.contact": "Contact",
+    "nav.language": "Language",
     "nav.download": "Download App",
 
     // Hero
@@ -190,6 +191,7 @@ export const translations = {
     "nav.safety": "Ασφάλεια",
     "nav.faq": "Συχνές Ερωτήσεις",
     "nav.contact": "Επικοινωνία",
+    "nav.language": "Γλώσσα",
     "nav.download": "Λήψη Εφαρμογής",
 
     // Hero
