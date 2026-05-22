@@ -18,7 +18,7 @@ export const translations = {
     "hero.h1_1": "Your Mind Absorbs",
     "hero.h1_2": "More Than You Think.",
     "hero.h1_3": "Take It Back.",
-    "hero.sub": "Social media, work pressure, daily struggles — your brain is quietly absorbing stress you can't even name. TheraNode helps you track how you actually feel, spot hidden patterns, and break negative spirals before they take root.<br/>No cloud. No accounts. Just you and your truth.",
+    "hero.sub": "Social media, work pressure, daily struggles — your brain is quietly absorbing stress you can't even name. TheraNode helps you track how you actually feel, spot hidden patterns, and break negative spirals before they take root.<br/>No cloud or online accounts. Just you and your truth.",
     "hero.btnPrimary": "See How It Works",
     "hero.btnOutline": "Try the App",
 
@@ -32,7 +32,7 @@ export const translations = {
     "why.card2.title": "The Silent Spiral",
     "why.card2.desc": "You notice something feels off — a heaviness, irritability, exhaustion you can't explain. But life keeps moving. You push it aside. Days pass. The feeling grows quietly until you feel broken and can't even remember when or why it started.",
     "why.card3.title": "The Anchor",
-    "why.card3.desc": "What if you could press pause every day and honestly ask: <em>\"How do I actually feel right now?\"</em><br/><br/>TheraNode captures that moment — your node. Week by week, it builds a living map of your mental landscape. By tagging entries with context like <strong>#Work</strong> or <strong>#Family</strong>, TheraNode reveals the correlations between your life events and your emotional state — helping you connect the dots yourself.",
+    "why.card3.desc": "What if you could press pause every day and ask: <em>\"How do I actually feel right now?\"</em><br/><br/>TheraNode captures that very moment - <b>your node</b>. Week by week, it builds a living map of your mental landscape. By tagging entries with context like <strong>#Work</strong> or <strong>#Family</strong>, TheraNode reveals the correlations between your life events and your emotional state — helping you connect the dots.",
 
     // Features
     "features.label": "Core Features",
@@ -43,12 +43,12 @@ export const translations = {
     "features.card2.title": "Spot the Hidden Patterns",
     "features.card2.desc": "Visualize your week with instant radar charts. Watch how your sleep impacts your stress, and how your energy correlates with your mood.",
     "features.card3.title": "Export Your Truth",
-    "features.card3.desc": "Generate a highly detailed, professional PDF report of your monthly trends. Perfect for self-reflection or sharing with your therapist.",
+    "features.card3.desc": "Generate a highly detailed, professional PDF report of your weekly reports with long-term trend data. Perfect for self-reflection or sharing with your therapist.",
 
     // TreeConcept
     "tree.heading1": "Simple on the surface.",
     "tree.heading2": "Powerful underneath.",
-    "tree.desc": "TheraNode is designed for simplicity and ease of mind at the user interface level, while its powerful architecture works silently in the background — processing 23 behavioral indicators, running correlation algorithms, and generating professional-grade insights from your honest daily check-ins.",
+    "tree.desc": "TheraNode is designed for simplicity and ease of mind at the user interface level, while its powerful architecture works silently in the background — processing 23 behavioral indicators, analyzing behavioral patterns and correlations, and generating professional-grade insights from your honest daily check-ins.",
     "tree.badge1": "90 Seconds Per Day",
     "tree.badge2": "23 Precision Indicators",
     "tree.badge3": "AES-256 Encryption",
@@ -92,14 +92,14 @@ export const translations = {
     "priv.desc": "We believe your mental health data is the most sensitive information you own. That's why TheraNode operates fundamentally differently from other wellness apps.",
     "priv.card1.title": "No Internet Required",
     "priv.card1.desc": "The app functions perfectly offline. Your data never transmits anywhere.",
-    "priv.card2.title": "No Accounts",
+    "priv.card2.title": "No Online Accounts",
     "priv.card2.desc": "Skip the sign-up. There is no central database linking you to your logs.",
     "priv.card3.title": "No Analytics",
     "priv.card3.desc": "We don't use third-party trackers to monitor how you use the app.",
 
     // DataSafety
     "safety.badge1": "No data shared with third parties",
-    "safety.badge2": "No data collected",
+    "safety.badge2": "No data collected on the cloud",
     "safety.badge3": "Data encrypted at rest (AES-256)",
     "safety.badge4": "Users can delete all data",
     "safety.badge5": "No ads, no analytics SDKs",
@@ -109,7 +109,7 @@ export const translations = {
     "safety.label": "Crisis Support",
     "safety.h2": "Your Safety Matters — Always",
     "safety.desc": "When TheraNode detects elevated distress indicators, it proactively displays a <strong>Safety Nudge</strong> — offering direct access to your therapist's phone number and your country's crisis helpline.",
-    "safety.feat1.title": "50+ Countries Supported",
+    "safety.feat1.title": "45+ Countries Supported",
     "safety.feat1.desc": "Verified crisis hotlines across North America, Europe, Asia, Latin America, Oceania, and Africa.",
     "safety.feat2.title": "Connectivity-Aware",
     "safety.feat2.desc": "The app checks for an active SIM card and cellular service before offering call buttons. If unavailable, numbers are displayed as copyable text.",
@@ -199,7 +199,7 @@ export const translations = {
     "hero.h1_1": "Το μυαλό σας απορροφά",
     "hero.h1_2": "Περισσότερα απ' όσο νομίζετε.",
     "hero.h1_3": "Ανακτήστε τον έλεγχο.",
-    "hero.sub": "Τα μέσα κοινωνικής δικτύωσης, η πίεση στη δουλειά, ο καθημερινός αγώνας — το μυαλό σας απορροφά σιωπηλά άγχος που δεν μπορείτε καν να ονομάσετε. Το TheraNode σας βοηθά να παρακολουθείτε πώς πραγματικά νιώθετε, να εντοπίζετε κρυφά μοτίβα και να σπάτε τους αρνητικούς κύκλους πριν εδραιωθούν.<br/>Χωρίς cloud. Χωρίς λογαριασμούς. Μόνο εσείς και η αλήθεια σας.",
+    "hero.sub": "Τα μέσα κοινωνικής δικτύωσης, η πίεση στη δουλειά, ο καθημερινός αγώνας — το μυαλό σας απορροφά σιωπηλά άγχος που δεν μπορείτε καν να ονομάσετε. Το TheraNode σας βοηθά να παρακολουθείτε πώς πραγματικά νιώθετε, να εντοπίζετε κρυφά μοτίβα και να σπάτε τους αρνητικούς κύκλους πριν εδραιωθούν. Χωρίς cloud και online λογαριασμούς. Μόνο εσείς και η αλήθεια σας.",
     "hero.btnPrimary": "Δείτε πώς λειτουργεί",
     "hero.btnOutline": "Παραδείγματα",
 
@@ -224,12 +224,12 @@ export const translations = {
     "features.card2.title": "Εντοπίστε Κρυφά Μοτίβα",
     "features.card2.desc": "Οπτικοποιήστε την εβδομάδα σας με άμεσα διαγράμματα. Δείτε πώς ο ύπνος σας επηρεάζει το άγχος σας και πώς η ενέργειά σας συσχετίζεται με τη διάθεσή σας.",
     "features.card3.title": "Εξάγετε την Αλήθεια Σας",
-    "features.card3.desc": "Δημιουργήστε μια εξαιρετικά λεπτομερή, επαγγελματική αναφορά PDF των μηνιαίων τάσεών σας. Ιδανικό για αυτο-αναστοχασμό ή για να το μοιραστείτε με τον θεραπευτή σας.",
+    "features.card3.desc": "Δημιουργήστε μια εξαιρετικά λεπτομερή, επαγγελματική αναφορά PDF με τις εβδομαδιαίες αναφορές σας με αναλυτικά δεδομένα. Ιδανικό για αυτο-αναστοχασμό ή για να το μοιραστείτε με τον θεραπευτή σας.",
 
     // TreeConcept
     "tree.heading1": "Απλό στην επιφάνεια.",
     "tree.heading2": "Ισχυρό στον πυρήνα.",
-    "tree.desc": "Το TheraNode έχει σχεδιαστεί για απλότητα και ηρεμία στο επίπεδο της διεπαφής χρήστη, ενώ η ισχυρή αρχιτεκτονική του λειτουργεί σιωπηλά στο παρασκήνιο — επεξεργάζεται 23 συμπεριφορικούς δείκτες, εκτελεί αλγόριθμους συσχέτισης και παράγει επαγγελματικού επιπέδου συμπεράσματα από τις ειλικρινείς καθημερινές σας καταγραφές.",
+    "tree.desc": "Το TheraNode έχει σχεδιαστεί για απλότητα και ηρεμία στο επίπεδο της διεπαφής χρήστη, ενώ η ισχυρή αρχιτεκτονική του λειτουργεί σιωπηλά στο παρασκήνιο — επεξεργάζεται 23 συμπεριφορικούς δείκτες, αναλύει συμπεριφορικά μοτίβα και συσχετίσεις, και παράγει επαγγελματικού επιπέδου συμπεράσματα από τις ειλικρινείς καθημερινές σας καταγραφές.",
     "tree.badge1": "90 Δευτερόλεπτα την Ημέρα",
     "tree.badge2": "23 Δείκτες Ακριβείας",
     "tree.badge3": "Κρυπτογράφηση AES-256",
@@ -290,7 +290,7 @@ export const translations = {
     "safety.label": "Υποστήριξη Κρίσης",
     "safety.h2": "Η Ασφάλειά σας Έχει Σημασία — Πάντα",
     "safety.desc": "Όταν το TheraNode ανιχνεύσει αυξημένους δείκτες δυσφορίας, εμφανίζει προληπτικά μια <strong>Ειδοποίηση Ασφαλείας</strong> — προσφέροντας άμεση πρόσβαση στον αριθμό τηλεφώνου του θεραπευτή σας και στη γραμμή βοήθειας της χώρας σας.",
-    "safety.feat1.title": "Υποστήριξη σε 50+ Χώρες",
+    "safety.feat1.title": "Υποστήριξη σε 45+ Χώρες",
     "safety.feat1.desc": "Επαληθευμένες γραμμές κρίσης σε Βόρεια Αμερική, Ευρώπη, Ασία, Λατινική Αμερική, Ωκεανία και Αφρική.",
     "safety.feat2.title": "Επίγνωση Συνδεσιμότητας",
     "safety.feat2.desc": "Η εφαρμογή ελέγχει για ενεργή κάρτα SIM και σήμα κινητής πριν προσφέρει κουμπιά κλήσης. Εάν δεν είναι διαθέσιμα, οι αριθμοί εμφανίζονται ως κείμενο για αντιγραφή.",
