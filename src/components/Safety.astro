@@ -5,7 +5,7 @@ import emergencyImg from '../assets/emergency pop up.webp';
 
 <section class="safety" id="safety">
   <div class="container safety-inner">
-    <div class="safety-content reveal">
+    <div class="safety-intro reveal">
       <span class="section-label" data-i18n="safety.label">Crisis Support</span>
       <h2 data-i18n="safety.h2">Your Safety Matters — Always</h2>
       <p class="safety-desc" data-i18n="safety.desc">
@@ -13,30 +13,30 @@ import emergencyImg from '../assets/emergency pop up.webp';
         displays a <strong>Safety Nudge</strong> — offering direct access to your
         therapist's phone number and your country's crisis helpline.
       </p>
-      <ul class="safety-features">
-        <li>
-          <span class="material-symbols-outlined">public</span>
-          <div>
-            <strong data-i18n="safety.feat1.title">45+ Countries Supported</strong>
-            <span data-i18n="safety.feat1.desc">Verified crisis hotlines across North America, Europe, Asia, Latin America, Oceania, and Africa.</span>
-          </div>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">cell_tower</span>
-          <div>
-            <strong data-i18n="safety.feat2.title">Connectivity-Aware</strong>
-            <span data-i18n="safety.feat2.desc">The app checks for an active SIM card and cellular service before offering call buttons. If unavailable, numbers are displayed as copyable text.</span>
-          </div>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">health_and_safety</span>
-          <div>
-            <strong data-i18n="safety.feat3.title">Not a Diagnosis</strong>
-            <span data-i18n="safety.feat3.desc">TheraNode does not diagnose. It simply observes self-reported markers and connects you to support when thresholds are exceeded.</span>
-          </div>
-        </li>
-      </ul>
     </div>
+    <ul class="safety-features reveal reveal-delay-1">
+      <li>
+        <span class="material-symbols-outlined">public</span>
+        <div>
+          <strong data-i18n="safety.feat1.title">45+ Countries Supported</strong>
+          <span data-i18n="safety.feat1.desc">Verified crisis hotlines across North America, Europe, Asia, Latin America, Oceania, and Africa.</span>
+        </div>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">cell_tower</span>
+        <div>
+          <strong data-i18n="safety.feat2.title">Connectivity-Aware</strong>
+          <span data-i18n="safety.feat2.desc">The app checks for an active SIM card and cellular service before offering call buttons. If unavailable, numbers are displayed as copyable text.</span>
+        </div>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">health_and_safety</span>
+        <div>
+          <strong data-i18n="safety.feat3.title">Not a Diagnosis</strong>
+          <span data-i18n="safety.feat3.desc">TheraNode does not diagnose. It simply observes self-reported markers and connects you to support when thresholds are exceeded.</span>
+        </div>
+      </li>
+    </ul>
     <div class="safety-phone reveal reveal-delay-2">
       <div class="phone-frame-safety">
         <Image src={emergencyImg} alt="TheraNode Safety Nudge popup showing crisis helpline and therapist call options" width={280} height={560} class="phone-screen" />
@@ -52,17 +52,21 @@ import emergencyImg from '../assets/emergency pop up.webp';
     text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
   }
   .safety-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 64px; align-items: center;
+    grid-template-areas: 
+      "intro image"
+      "features image";
   }
-  .safety-content h2 {
+  .safety-intro { grid-area: intro; align-self: end; padding-bottom: 32px; }
+  .safety-intro h2 {
     font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
     letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 16px;
   }
   .safety-desc {
-    font-size: 16px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px;
+    font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 500px;
   }
   .safety-features {
-    list-style: none; display: flex; flex-direction: column; gap: 20px;
+    grid-area: features; align-self: start; list-style: none; display: flex; flex-direction: column; gap: 20px;
   }
   .safety-features li {
     display: flex; gap: 16px; align-items: flex-start;
@@ -76,7 +80,7 @@ import emergencyImg from '../assets/emergency pop up.webp';
   .safety-features li span:last-child {
     font-size: 14px; line-height: 1.6; color: var(--text-secondary);
   }
-  .safety-phone { display: flex; justify-content: center; }
+  .safety-phone { grid-area: image; display: flex; justify-content: center; }
   .phone-frame-safety {
     width: 260px; border-radius: 28px; overflow: hidden;
     border: 6px solid var(--sage-200);
@@ -86,10 +90,17 @@ import emergencyImg from '../assets/emergency pop up.webp';
   .phone-frame-safety:hover { transform: translateY(-6px); box-shadow: 0 28px 64px rgba(30,41,59,0.16); }
   .phone-screen { width: 100%; height: auto; display: block; }
   @media (max-width: 900px) {
-    .safety-inner { grid-template-columns: 1fr; text-align: center; }
+    .safety-inner { 
+      display: flex;
+      flex-direction: column;
+      text-align: center; 
+      gap: 32px;
+    }
+    .safety-intro { padding-bottom: 0; order: 1; }
+    .safety-phone { order: 2; margin: 0 auto; }
+    .safety-features { align-items: center; order: 3; }
     .safety-desc { margin-left: auto; margin-right: auto; }
     .safety-features { align-items: center; }
     .safety-features li { text-align: left; max-width: 400px; }
-    .safety-phone { order: -1; }
   }
 </style>

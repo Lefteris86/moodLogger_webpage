@@ -15,9 +15,9 @@ export const translations = {
 
     // Hero
     "hero.badge": "Your Private Mental Companion",
-    "hero.h1_1": "Your Mind Absorbs",
-    "hero.h1_2": "More Than You Think.",
-    "hero.h1_3": "Take It Back.",
+    "hero.h1_1": "Understand Your Mood.",
+    "hero.h1_2": "Spot The Patterns.",
+    "hero.h1_3": "Own Your Truth.",
     "hero.sub": "Social media, work pressure, daily struggles — your brain is quietly absorbing stress you can't even name. TheraNode helps you track how you actually feel, spot hidden patterns, and break negative spirals before they take root.<br/>No cloud or online accounts. Just you and your truth.",
     "hero.btnPrimary": "See How It Works",
     "hero.btnOutline": "Try the App",
@@ -196,9 +196,9 @@ export const translations = {
 
     // Hero
     "hero.badge": "Ο σύντροφος ψυχικής ευεξίας σας",
-    "hero.h1_1": "Το μυαλό σας απορροφά",
-    "hero.h1_2": "Περισσότερα απ' όσο νομίζετε.",
-    "hero.h1_3": "Ανακτήστε τον έλεγχο.",
+    "hero.h1_1": "Κατανοήστε τη Διάθεσή σας.",
+    "hero.h1_2": "Εντοπίστε τα Μοτίβα.",
+    "hero.h1_3": "Ανακαλύψτε την Αλήθεια σας.",
     "hero.sub": "Τα μέσα κοινωνικής δικτύωσης, η πίεση στη δουλειά, ο καθημερινός αγώνας — το μυαλό σας απορροφά σιωπηλά άγχος που δεν μπορείτε καν να ονομάσετε. Το TheraNode σας βοηθά να παρακολουθείτε πώς πραγματικά νιώθετε, να εντοπίζετε κρυφά μοτίβα και να σπάτε τους αρνητικούς κύκλους πριν εδραιωθούν. Χωρίς cloud και online λογαριασμούς. Μόνο εσείς και η αλήθεια σας.",
     "hero.btnPrimary": "Δείτε πώς λειτουργεί",
     "hero.btnOutline": "Παραδείγματα",

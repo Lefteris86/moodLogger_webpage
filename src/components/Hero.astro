@@ -13,16 +13,18 @@ import imgEmergency from '../assets/img_emergency popup B.webp';
 <section class="hero">
   <div class="hero-bg-glow"></div>
   <div class="container hero-inner">
-    <div class="hero-content reveal">
+    <div class="hero-intro reveal">
       <div class="hero-badge">
         <span class="material-symbols-outlined">self_improvement</span>
         <span data-i18n="hero.badge">Your Private Mental Companion</span>
       </div>
       <h1>
-        <span data-i18n="hero.h1_1">Your Mind Absorbs</span><br/>
-        <span data-i18n="hero.h1_2">More Than You Think.</span><br/>
-        <span class="hero-accent" data-i18n="hero.h1_3">Take It Back.</span>
+        <span data-i18n="hero.h1_1">Understand Your Mood.</span><br/>
+        <span data-i18n="hero.h1_2">Spot The Patterns.</span><br/>
+        <span class="hero-accent" data-i18n="hero.h1_3">Own Your Truth.</span>
       </h1>
+    </div>
+    <div class="hero-details reveal reveal-delay-1">
       <p class="hero-sub" data-i18n="hero.sub">
         Social media, work pressure, daily struggles — your brain is quietly
         absorbing stress you can't even name. TheraNode helps you track how you
@@ -87,9 +89,14 @@ import imgEmergency from '../assets/img_emergency popup B.webp';
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 0 60px;
     align-items: center;
+    grid-template-areas: 
+      "intro carousel"
+      "details carousel";
   }
+  .hero-intro { grid-area: intro; align-self: end; padding-bottom: 24px; }
+  .hero-details { grid-area: details; align-self: start; }
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -148,6 +155,7 @@ import imgEmergency from '../assets/img_emergency popup B.webp';
   .btn-outline:hover { border-color: var(--primary-dark); color: var(--primary-dark); }
 
   .hero-carousel {
+    grid-area: carousel;
     display: flex;
     justify-content: center;
     perspective: 1200px;
@@ -197,11 +205,19 @@ import imgEmergency from '../assets/img_emergency popup B.webp';
   }
 
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-inner { 
+      display: flex;
+      flex-direction: column;
+      text-align: center; 
+      gap: 16px;
+    }
+    .hero-intro { padding-bottom: 0; order: 1; align-self: center; }
+    .hero-carousel { margin-top: -64px; margin-bottom: -48px; order: 2; align-self: center; }
+    .hero-details { order: 3; align-self: center; }
     .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
     
-    .hero-carousel { order: -1; margin-bottom: 24px; margin-top: 24px; }
+    .carousel-spinner { left: 10%; }
     .carousel-container { transform: scale(0.7); transform-origin: center center; }
     .hero-bg-glow { top: -60px; right: -120px; width: 300px; height: 300px; }
   }

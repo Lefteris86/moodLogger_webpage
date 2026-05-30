@@ -315,13 +315,6 @@ const getPath = (path) => {
     navbar?.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // ── Hamburger toggle ──
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks = document.getElementById('nav-links');
-  hamburger?.addEventListener('click', () => {
-    navLinks?.classList.toggle('open');
-  });
-
   // ── Dropdown toggle ──
   document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -344,6 +337,7 @@ const getPath = (path) => {
   document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
     link.addEventListener('click', () => {
       document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      const navLinks = document.getElementById('nav-links');
       navLinks?.classList.remove('open'); // also close mobile menu
     });
   });
