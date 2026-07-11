@@ -127,7 +127,20 @@ import Footer from '../components/Footer.astro';
 
         <section>
           <h2>11. Third-Party Services</h2>
-          <p>TheraNode does <strong>not</strong> integrate with any third-party services, SDKs, or APIs that collect user data. There are no:</p>
+          <p>TheraNode integrates with the following third-party services <strong>exclusively for subscription management</strong>:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Service</th><th>Purpose</th><th>Data Accessed</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Google Play Billing</strong></td><td>Processes subscription payments (Monthly €6.99 / Yearly €54.99)</td><td>Purchase history, payment status (managed by Google)</td></tr>
+                <tr><td><strong>RevenueCat</strong></td><td>Validates purchase receipts and manages subscription entitlements</td><td>Anonymous app user ID, purchase receipts (no wellness data)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Important:</strong> Neither service has access to your wellness logs, notes, PIN, or any personal data stored in the app. RevenueCat receives only an anonymous identifier and purchase receipt data — it never sees your mood entries, therapist information, or any health-related content.</p>
+          <p>TheraNode does <strong>not</strong> integrate with:</p>
           <ul>
             <li>Analytics services (e.g., Google Analytics, Firebase Analytics)</li>
             <li>Advertising networks</li>
