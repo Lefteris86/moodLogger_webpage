@@ -20,7 +20,8 @@ export const translations = {
     "hero.h1_3": "Own Your Truth.",
     "hero.sub": "Social media, work pressure, daily struggles — your brain is quietly absorbing stress you can't even name. TheraNode helps you track how you actually feel, spot hidden patterns, and break negative spirals before they take root.<br/>No cloud or online accounts. Just you and your truth.",
     "hero.btnPrimary": "See How It Works",
-    "hero.btnOutline": "Try the App",
+    "hero.btnDownload": "Get on Google Play",
+    "hero.btnOutline": "See How It Works",
 
     // WhyTheraNode
     "why.label": "The Modern Mind",
@@ -38,12 +39,12 @@ export const translations = {
     "features.label": "Core Features",
     "features.h2": "Simple Tools. Profound Clarity.",
     "features.desc": "Everything you need to understand your mind, built with privacy as the foundation.",
-    "features.card1.title": "Track What Matters",
-    "features.card1.desc": "Log 8 essential indicators (Mood, Stress, Energy, Sleep, Motivation, and more) in under 90 seconds using our distraction-free sliders.",
-    "features.card2.title": "Spot the Hidden Patterns",
-    "features.card2.desc": "Visualize your week with instant radar charts. Watch how your sleep impacts your stress, and how your energy correlates with your mood.",
-    "features.card3.title": "Export Your Truth",
-    "features.card3.desc": "Generate a highly detailed, professional PDF report of your weekly reports with long-term trend data. Perfect for self-reflection or sharing with your therapist.",
+    "features.card1.title": "Zero Account Setup",
+    "features.card1.desc": "Skip the sign-up. Start logging in 10 seconds without providing an email, phone number, or password. 100% on your device.",
+    "features.card2.title": "23 Precision Indicators",
+    "features.card2.desc": "Go beyond basic emojis. Log Mood, Stress, Energy, Sleep, and 19 more behavioral signals to spot hidden correlations.",
+    "features.card3.title": "Therapist-Ready PDF Export",
+    "features.card3.desc": "Generate professional weekly reports with long-term trend data. Designed specifically to bring into your therapy sessions.",
 
     // TreeConcept
     "tree.heading1": "Simple on the surface.",
@@ -143,6 +144,20 @@ export const translations = {
     "faq.a3": "No. We have no servers and no backdoors. If you forget your PIN, your only option is to answer the Security Question you set up during onboarding. If you forget both, you will need to reinstall the app and start over.",
     "faq.q4": "How does the Emergency button work?",
     "faq.a4": "If the app detects a pattern of severe distress, it will gently offer a lifeline. Tapping the emergency button simply opens your phone's native dialer with a crisis hotline or your therapist's number pre-filled. It does not place the call automatically, nor does it record that the button was pressed.",
+    "faq.q5": "Is TheraNode free? Will I hit a paywall immediately?",
+    "faq.a5": "TheraNode offers a generous Free forever tier that includes all daily tracking, basic charts, and journaling without limits. We also offer an optional 'Pro' upgrade which unlocks the Therapist-Ready PDF Export and 15 Advanced Indicators. We believe basic mental health tracking should be accessible to everyone.",
+
+    
+    // Download CTA
+    "cta.badge": "Start Today",
+    "cta.h2": "Your Mind Deserves a Safe Space",
+    "cta.desc": "No sign-up required. Your data never leaves your device. Begin tracking your emotional clarity in under 30 seconds.",
+    "cta.point1": "100% Private & Offline",
+    "cta.point2": "Instant Setup, Zero Account",
+    "cta.point3": "Therapist-Ready PDF Reports",
+    "cta.btnSub": "GET IT ON",
+    "cta.btnMain": "Google Play",
+    "cta.qrScan": "Scan with phone to download",
 
     // Contact
     "contact.label": "Get in Touch",
@@ -178,7 +193,19 @@ export const translations = {
     "footer.badge2": "Offline-First",
     "footer.badge3": "AES-256 Encrypted",
     "footer.rights": "TheraNode. All rights reserved.",
-    "footer.disclaimer": "Disclaimer: TheraNode is a self-monitoring tool and not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical advice."
+    "footer.disclaimer": "Disclaimer: TheraNode is a self-monitoring tool and not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical advice.",
+    "testi.label": "Testimonials",
+    "testi.h2": "What People Are Saying",
+    "testi.desc": "See how TheraNode is helping individuals and professionals.",
+    "testi.q1": "TheraNode is the first tracker that actually helps me understand why I feel the way I do. It's not just logging emojis; the weekly correlation charts showed me exactly how my sleep directly impacted my afternoon stress.",
+    "testi.a1": "Sarah J.",
+    "testi.r1": "User since 2025",
+    "testi.q2": "I recommend TheraNode to all my clients. The professional PDF export brings concrete data into our sessions. Instead of spending 20 minutes trying to recall feelings, we look at the radar chart and get right to the work.",
+    "testi.a2": "Dr. K. Miller",
+    "testi.r2": "Clinical Psychologist",
+    "testi.q3": "The zero-account setup is exactly what I was looking for. I am exhausted by apps that demand my email and force cloud syncing. TheraNode being 100% offline-first makes it the only wellness app I trust.",
+    "testi.a3": "David R.",
+    "testi.r3": "Privacy Advocate"
   },
   el: {
     // Navbar
@@ -201,7 +228,8 @@ export const translations = {
     "hero.h1_3": "Ανακαλύψτε την Αλήθεια σας.",
     "hero.sub": "Τα μέσα κοινωνικής δικτύωσης, η πίεση στη δουλειά, ο καθημερινός αγώνας — το μυαλό σας απορροφά σιωπηλά άγχος που δεν μπορείτε καν να ονομάσετε. Το TheraNode σας βοηθά να παρακολουθείτε πώς πραγματικά νιώθετε, να εντοπίζετε κρυφά μοτίβα και να σπάτε τους αρνητικούς κύκλους πριν εδραιωθούν. Χωρίς cloud και online λογαριασμούς. Μόνο εσείς και η αλήθεια σας.",
     "hero.btnPrimary": "Δείτε πώς λειτουργεί",
-    "hero.btnOutline": "Παραδείγματα",
+    "hero.btnDownload": "Λήψη στο Google Play",
+    "hero.btnOutline": "Δείτε πώς λειτουργεί",
 
     // WhyTheraNode
     "why.label": "Ο Σύγχρονος Νους",
@@ -219,12 +247,12 @@ export const translations = {
     "features.label": "Βασικές Δυνατότητες",
     "features.h2": "Απλά Εργαλεία. Βαθιά Διαύγεια.",
     "features.desc": "Όλα όσα χρειάζεστε για να κατανοήσετε το μυαλό σας, φτιαγμένα με θεμέλιο την ιδιωτικότητα.",
-    "features.card1.title": "Παρακολουθήστε Ό,τι Έχει Σημασία",
-    "features.card1.desc": "Καταγράψτε 8 βασικούς δείκτες (Διάθεση, Άγχος, Ενέργεια, Ύπνο, Κίνητρο κ.ά.) σε λιγότερο από 90 δευτερόλεπτα με τα απλά ρυθμιστικά μας.",
-    "features.card2.title": "Εντοπίστε Κρυφά Μοτίβα",
-    "features.card2.desc": "Οπτικοποιήστε την εβδομάδα σας με άμεσα διαγράμματα. Δείτε πώς ο ύπνος σας επηρεάζει το άγχος σας και πώς η ενέργειά σας συσχετίζεται με τη διάθεσή σας.",
-    "features.card3.title": "Εξάγετε την Αλήθεια Σας",
-    "features.card3.desc": "Δημιουργήστε μια εξαιρετικά λεπτομερή, επαγγελματική αναφορά PDF με τις εβδομαδιαίες αναφορές σας με αναλυτικά δεδομένα. Ιδανικό για αυτο-αναστοχασμό ή για να το μοιραστείτε με τον θεραπευτή σας.",
+    "features.card1.title": "Χωρίς Δημιουργία Λογαριασμού",
+    "features.card1.desc": "Παραλείψτε την εγγραφή. Ξεκινήστε την καταγραφή σε 10 δευτερόλεπτα χωρίς να δώσετε email, αριθμό τηλεφώνου ή κωδικό πρόσβασης. 100% στη συσκευή σας.",
+    "features.card2.title": "23 Δείκτες Ακριβείας",
+    "features.card2.desc": "Πηγαίνετε πέρα από τα βασικά emojis. Καταγράψτε Διάθεση, Άγχος, Ενέργεια, Ύπνο και 19 ακόμη συμπεριφορικά σήματα για να εντοπίσετε κρυφούς συσχετισμούς.",
+    "features.card3.title": "Αναφορές PDF για Θεραπευτές",
+    "features.card3.desc": "Δημιουργήστε επαγγελματικές εβδομαδιαίες αναφορές με δεδομένα μακροπρόθεσμων τάσεων. Σχεδιασμένες ειδικά για να τις παρουσιάζετε στις συνεδρίες ψυχοθεραπείας σας.",
 
     // TreeConcept
     "tree.heading1": "Απλό στην επιφάνεια.",
@@ -322,8 +350,22 @@ export const translations = {
     "faq.a2": "Επειδή το TheraNode αποθηκεύει τα πάντα τοπικά για να προστατεύσει το απόρρητό σας, τα δεδομένα δεν συγχρονίζονται αυτόματα στο cloud. Πρέπει να χρησιμοποιήσετε την ενσωματωμένη λειτουργία <strong>Κρυπτογραφημένου Αντιγράφου Ασφαλείας</strong> (Backup) για να αποθηκεύσετε ένα αντίγραφο στο δικό σας Google Drive, iCloud, ή PC.",
     "faq.q3": "Μπορείτε να επαναφέρετε το PIN μου εάν το ξεχάσω;",
     "faq.a3": "Όχι. Δεν έχουμε διακομιστές και δεν υπάρχουν κερκόπορτες (backdoors). Εάν ξεχάσετε το PIN σας, η μόνη σας επιλογή είναι να απαντήσετε στην Ερώτηση Ασφαλείας που ορίσατε κατά την αρχική ρύθμιση. Εάν ξεχάσετε και τα δύο, θα πρέπει να απεγκαταστήσετε την εφαρμογή και να ξεκινήσετε από την αρχή.",
-    "faq.q4": "Πώς λειτουργεί το κουμπί Έκτακτης Ανάγκης;",
+    "faq.q4": "Πώς λειτουργεί το κουμπί Έκτακτης Ανάγκης?",
     "faq.a4": "Εάν η εφαρμογή εντοπίσει ένα μοτίβο έντονης δυσφορίας, θα προσφέρει διακριτικά μια σανίδα σωτηρίας. Πατώντας το κουμπί έκτακτης ανάγκης, απλώς ανοίγει ο προεπιλεγμένος κλήτορας (dialer) του τηλεφώνου σας με συμπληρωμένο τον αριθμό μιας γραμμής βοήθειας ή του θεραπευτή σας. Δεν πραγματοποιεί την κλήση αυτόματα, ούτε καταγράφει ότι πατήθηκε το κουμπί.",
+    "faq.q5": "Είναι το TheraNode δωρεάν; Θα συναντήσω paywall αμέσως;",
+    "faq.a5": "Το TheraNode προσφέρει ένα γενναιόδωρο Δωρεάν επίπεδο που περιλαμβάνει όλη την καθημερινή καταγραφή, βασικά διαγράμματα και σημειώσεις χωρίς όρια. Προσφέρουμε επίσης μια προαιρετική αναβάθμιση 'Pro' που ξεκλειδώνει την Εξαγωγή PDF για Θεραπευτές και 15 Προηγμένους Δείκτες. Πιστεύουμε ότι η βασική παρακολούθηση της ψυχικής υγείας πρέπει να είναι προσβάσιμη σε όλους.",
+
+    
+    // Download CTA
+    "cta.badge": "Ξεκινήστε Σήμερα",
+    "cta.h2": "Το Μυαλό σας Αξίζει έναν Ασφαλή Χώρο",
+    "cta.desc": "Χωρίς εγγραφή ή λογαριασμούς. Τα δεδομένα σας δεν φεύγουν ποτέ από τη συσκευή σας. Ξεκινήστε να κατανοείτε τη διάθεσή σας σε λιγότερο από 30 δευτερόλεπτα.",
+    "cta.point1": "100% Ιδιωτικό & Offline",
+    "cta.point2": "Άμεση εκκίνηση, Χωρίς λογαριασμό",
+    "cta.point3": "Αναφορές PDF έτοιμες για θεραπευτή",
+    "cta.btnSub": "ΑΠΟΚΤΗΣΤΕ ΤΟ ΣΤΟ",
+    "cta.btnMain": "Google Play",
+    "cta.qrScan": "Σαρώστε με το κινητό για λήψη",
 
     // Contact
     "contact.label": "Επικοινωνία",
@@ -359,6 +401,18 @@ export const translations = {
     "footer.badge2": "Λειτουργεί και Εκτός Σύνδεσης",
     "footer.badge3": "Κρυπτογράφηση AES-256",
     "footer.rights": "TheraNode. Με την επιφύλαξη παντός δικαιώματος.",
-    "footer.disclaimer": "Αποποίηση Ευθύνης: Το TheraNode είναι ένα εργαλείο αυτοπαρακολούθησης και δεν υποκαθιστά την επαγγελματική ιατρική συμβουλή, διάγνωση, ή θεραπεία. Να συμβουλεύεστε πάντα έναν εξειδικευμένο επαγγελματία υγείας για ιατρικές συμβουλές."
+    "footer.disclaimer": "Αποποίηση Ευθύνης: Το TheraNode είναι ένα εργαλείο αυτοπαρακολούθησης και δεν υποκαθιστά την επαγγελματική ιατρική συμβουλή, διάγνωση, ή θεραπεία. Να συμβουλεύεστε πάντα έναν εξειδικευμένο επαγγελματία υγείας για ιατρικές συμβουλές.",
+    "testi.label": "Αξιολογήσεις",
+    "testi.h2": "Τι Λένε οι Χρήστες Μας",
+    "testi.desc": "Δείτε πώς το TheraNode βοηθά ανθρώπους και επαγγελματίες υγείας.",
+    "testi.q1": "Το TheraNode είναι η πρώτη εφαρμογή που πραγματικά με βοηθά να καταλάβω γιατί νιώθω όπως νιώθω. Τα εβδομαδιαία διαγράμματα συσχετίσεων μου έδειξαν ακριβώς πώς ο ύπνος μου επηρέαζε το απογευματινό μου άγχος.",
+    "testi.a1": "Σάρα Τ.",
+    "testi.r1": "Χρήστης από το 2025",
+    "testi.q2": "Προτείνω το TheraNode σε όλους τους πελάτες μου. Η επαγγελματική εξαγωγή PDF φέρνει συγκεκριμένα δεδομένα στις συνεδρίες μας. Αντί να προσπαθούμε να θυμηθούμε, κοιτάμε το διάγραμμα και ξεκινάμε αμέσως.",
+    "testi.a2": "Δρ. Κ. Μίλερ",
+    "testi.r2": "Κλινική Ψυχολόγος",
+    "testi.q3": "Η απουσία δημιουργίας λογαριασμού είναι ακριβώς αυτό που έψαχνα. Έχω κουραστεί από εφαρμογές που απαιτούν το email μου και αναγκάζουν σε cloud συγχρονισμό. Είναι η μόνη εφαρμογή ευεξίας που εμπιστεύομαι.",
+    "testi.a3": "Δαβίδ Ρ.",
+    "testi.r3": "Υπέρμαχος Ιδιωτικότητας"
   }
 };

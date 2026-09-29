@@ -1,0 +1,285 @@
+---
+// DownloadCTA component: Bottom call-to-action banner with Google Play link and desktop QR code
+---
+
+<section class="download-cta-section" id="download-app">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-glow"></div>
+      <div class="cta-inner">
+        <div class="cta-text-side">
+          <span class="cta-badge" data-i18n="cta.badge">Start Today</span>
+          <h2 class="cta-title" data-i18n="cta.h2">Your Mind Deserves a Safe Space</h2>
+          <p class="cta-description" data-i18n="cta.desc">
+            No sign-up required. Your data never leaves your device. Begin tracking your emotional clarity in under 30 seconds.
+          </p>
+
+          <div class="cta-points">
+            <div class="point-item">
+              <span class="material-symbols-outlined point-icon">lock</span>
+              <span data-i18n="cta.point1">100% Private &amp; Offline</span>
+            </div>
+            <div class="point-item">
+              <span class="material-symbols-outlined point-icon">flash_on</span>
+              <span data-i18n="cta.point2">Instant Setup, Zero Account</span>
+            </div>
+            <div class="point-item">
+              <span class="material-symbols-outlined point-icon">description</span>
+              <span data-i18n="cta.point3">Therapist-Ready PDF Reports</span>
+            </div>
+          </div>
+
+          <div class="cta-actions">
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.theranode.app" 
+              class="btn-gplay" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              id="download-banner-btn"
+            >
+              <svg class="gplay-svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33-2.935 1.695-2.345-2.345 2.978-2.68zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+              </svg>
+              <div class="btn-label-group">
+                <span class="btn-sub" data-i18n="cta.btnSub">GET IT ON</span>
+                <span class="btn-main" data-i18n="cta.btnMain">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-qr-side">
+          <div class="qr-card">
+            <div class="qr-frame">
+              <img 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.theranode.app" 
+                alt="Scan QR code to install TheraNode from Google Play" 
+                width="140" 
+                height="140"
+                class="qr-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="qr-note">
+              <span class="material-symbols-outlined qr-icon">qr_code_scanner</span>
+              <span data-i18n="cta.qrScan">Scan with phone to download</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .download-cta-section {
+    padding: 40px 0 50px;
+    background: var(--bg);
+  }
+
+  .cta-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--sage-900) 0%, #1f2e27 60%, var(--sage-800) 100%);
+    border-radius: var(--radius-xl);
+    padding: 56px 48px;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(49, 60, 54, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: -120px;
+    right: -60px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(144, 193, 167, 0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .cta-text-side {
+    max-width: 580px;
+  }
+
+  .cta-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(144, 193, 167, 0.16);
+    border: 1px solid rgba(144, 193, 167, 0.3);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    margin-bottom: 18px;
+  }
+
+  .cta-title {
+    font-size: clamp(26px, 3.8vw, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-description {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 28px;
+  }
+
+  .cta-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-bottom: 32px;
+  }
+
+  .point-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .point-icon {
+    font-size: 18px;
+    color: var(--primary);
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btn-gplay {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 28px;
+    background: #fff;
+    color: var(--text-primary);
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition);
+  }
+
+  .btn-gplay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    background: #fdfdfd;
+  }
+
+  .gplay-svg {
+    color: #396752;
+    flex-shrink: 0;
+  }
+
+  .btn-label-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .btn-sub {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+  }
+
+  .btn-main {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  /* QR Code Side */
+  .cta-qr-side {
+    flex-shrink: 0;
+  }
+
+  .qr-card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 18px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .qr-frame {
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--sage-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qr-img {
+    display: block;
+    width: 140px;
+    height: 140px;
+  }
+
+  .qr-note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sage-700);
+  }
+
+  .qr-icon {
+    font-size: 16px;
+    color: var(--primary-dark);
+  }
+
+  @media (max-width: 860px) {
+    .cta-card {
+      padding: 36px 24px;
+    }
+    .cta-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 32px;
+    }
+    .cta-text-side {
+      max-width: 100%;
+    }
+    .cta-points {
+      justify-content: center;
+    }
+    .cta-actions {
+      justify-content: center;
+    }
+    .cta-qr-side {
+      display: none;
+    }
+  }
+</style>

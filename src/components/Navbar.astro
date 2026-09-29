@@ -85,7 +85,7 @@ const getPath = (path) => {
       </div>
     </div>
 
-    <a href="#" class="nav-cta" id="download-cta" target="_blank" rel="noopener noreferrer">
+    <a href="https://play.google.com/store/apps/details?id=com.theranode.app" class="nav-cta" id="download-cta" target="_blank" rel="noopener noreferrer">
       <svg class="gplay-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
         <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33-2.935 1.695-2.345-2.345 2.978-2.68zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
       </svg>
@@ -277,7 +277,15 @@ const getPath = (path) => {
   }
 
   @media (max-width: 768px) {
-    .nav-links, .nav-cta { display: none; }
+    .nav-links { display: none; }
+    .nav-cta {
+      display: inline-flex;
+      padding: 7px 14px;
+      font-size: 12px;
+      margin-left: auto;
+      margin-right: 8px;
+      gap: 6px;
+    }
     .nav-hamburger { display: flex; }
     .nav-links.open {
       display: flex;

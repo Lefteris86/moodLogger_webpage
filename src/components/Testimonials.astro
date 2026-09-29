@@ -1,0 +1,108 @@
+---
+const testimonials = [
+  {
+    quote: "TheraNode is the first tracker that actually helps me understand why I feel the way I do. It's not just logging emojis; the weekly correlation charts showed me exactly how my sleep directly impacted my afternoon stress.",
+    author: "Sarah J.",
+    role: "User since 2025"
+  },
+  {
+    quote: "I recommend TheraNode to all my clients. The professional PDF export brings concrete data into our sessions. Instead of spending 20 minutes trying to recall feelings, we look at the radar chart and get right to the work.",
+    author: "Dr. K. Miller",
+    role: "Clinical Psychologist"
+  },
+  {
+    quote: "The zero-account setup is exactly what I was looking for. I am exhausted by apps that demand my email and force cloud syncing. TheraNode being 100% offline-first makes it the only wellness app I trust.",
+    author: "David R.",
+    role: "Privacy Advocate"
+  }
+];
+---
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" data-i18n="testi.label">Testimonials</span>
+      <h2 data-i18n="testi.h2">What People Are Saying</h2>
+      <p data-i18n="testi.desc">See how TheraNode is helping individuals and professionals.</p>
+    </div>
+
+    <div class="testi-grid">
+      {testimonials.map((t, i) => (
+        <div class={`testi-card reveal reveal-delay-${i + 1}`}>
+          <div class="testi-icon">
+            <span class="material-symbols-outlined">format_quote</span>
+          </div>
+          <p class="testi-quote" data-i18n={`testi.q${i + 1}`}>{t.quote}</p>
+          <div class="testi-author">
+            <strong data-i18n={`testi.a${i + 1}`}>{t.author}</strong>
+            <span data-i18n={`testi.r${i + 1}`}>{t.role}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials { padding: 100px 0; background: var(--bg-alt); }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-label {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage-500); margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: clamp(24px, 3.5vw, 34px); font-weight: 700;
+    letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px; color: var(--text-secondary); max-width: 560px; margin: 0 auto;
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .testi-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all var(--transition);
+  }
+  .testi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--sage-300);
+  }
+  .testi-icon .material-symbols-outlined {
+    font-size: 32px;
+    color: var(--sage-200);
+  }
+  .testi-quote {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-style: italic;
+    flex-grow: 1;
+  }
+  .testi-author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .testi-author strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .testi-author span {
+    font-size: 12px;
+    color: var(--sage-500);
+  }
+  @media (max-width: 900px) {
+    .testi-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  }
+</style>

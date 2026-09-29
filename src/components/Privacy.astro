@@ -2,8 +2,6 @@
 ---
 
 <section class="privacy" id="privacy">
-  <div class="privacy-glow-left"></div>
-  <div class="privacy-glow-right"></div>
   <div class="container privacy-inner">
     <div class="reveal">
       <span class="material-symbols-outlined privacy-shield">shield_lock</span>
@@ -36,35 +34,31 @@
 <style>
   .privacy {
     position: relative;
-    padding: 100px 0;
-    background: var(--sage-800);
-    color: #fff;
+    padding: 56px 0 60px;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--sage-100) 50%, var(--bg) 100%);
+    color: var(--text-primary);
     overflow: hidden;
     text-align: center;
   }
-  .privacy-glow-left, .privacy-glow-right {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.15;
-    pointer-events: none;
+  
+  .privacy-shield {
+    font-size: 42px;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+    display: inline-block;
   }
-  .privacy-glow-left { top: -100px; left: -100px; background: var(--primary); }
-  .privacy-glow-right { bottom: -100px; right: -100px; background: var(--sage-400); }
-  .privacy-shield { font-size: 48px; color: var(--primary); margin-bottom: 20px; }
   .privacy h2 {
     font-size: clamp(24px, 3.5vw, 36px);
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 16px;
+    color: var(--text-primary);
+    margin-bottom: 14px;
   }
   .privacy-sub {
     font-size: 16px;
-    color: rgba(255,255,255,0.7);
+    color: var(--text-secondary);
     max-width: 580px;
-    margin: 0 auto 48px;
+    margin: 0 auto 40px;
     line-height: 1.7;
   }
   .privacy-cards {
@@ -75,31 +69,40 @@
     margin: 0 auto;
   }
   .privacy-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--card);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
     padding: 32px 24px;
-    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-card);
     text-align: center;
     transition: all var(--transition);
   }
   .privacy-card:hover {
-    background: rgba(255,255,255,0.1);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--sage-300);
   }
   .privacy-card .material-symbols-outlined {
-    font-size: 24px;
-    color: var(--primary);
+    font-size: 26px;
+    color: var(--primary-dark);
     margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--sage-100);
   }
   .privacy-card h4 {
     font-size: 17px;
     font-weight: 700;
+    color: var(--text-primary);
     margin-bottom: 8px;
   }
   .privacy-card p {
     font-size: 14px;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-secondary);
     line-height: 1.6;
   }
   @media (max-width: 768px) {
