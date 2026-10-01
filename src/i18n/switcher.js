@@ -1,4 +1,7 @@
-import { translations } from './translations.js';
+import en from './en.json';
+import el from './el.json';
+
+const translations = { en, el };
 
 let currentLang = 'en';
 

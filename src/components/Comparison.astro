@@ -2,23 +2,48 @@
 const comparisons = [
   {
     feature: "For You",
-    competitor: "Basic emoji logging that tells you nothing about why you feel the way you do.",
-    theranode: "23 precision indicators with weekly pattern recognition — so you finally start connecting the dots.",
+    competitor: "Basic emoji tracking",
+    theranode: "23 precision indicators & correlations",
   },
   {
     feature: "For Your Therapist",
-    competitor: "Clients arrive to sessions trying to recall vague feelings from weeks ago.",
-    theranode: "Optional professional PDF reports give your therapist precise data — making sessions dramatically more effective.",
+    competitor: "(Optional)",
+    theranode: "Professional clinical PDF exports",
   },
   {
-    feature: "Data Privacy",
-    competitor: "Data stored on cloud servers, vulnerable to breaches or monetized by third parties.",
-    theranode: "100% On-device storage. Medical-grade AES-256 encryption. Zero cloud syncing.",
+    feature: "Privacy",
+    competitor: "Cloud storage & analytics",
+    theranode: "100% offline device storage",
   },
   {
-    feature: "Tracking Depth",
-    competitor: "Limited to basic emojis (Happy, Sad, Angry) that miss the full picture.",
-    theranode: "23 precision indicators tracking cognitive, physical, and emotional nuances.",
+    feature: "Security",
+    competitor: "Email/password accounts",
+    theranode: "AES-256 local encryption",
+  },
+  {
+    feature: "Crisis Support",
+    competitor: "No proactive support",
+    theranode: "Smart Safety Nudges across 45+ countries",
+  },
+  {
+    feature: "Onboarding",
+    competitor: "Mandatory sign-ups & emails",
+    theranode: "Zero account setup, start in 10 seconds",
+  },
+  {
+    feature: "Monetization",
+    competitor: "Flooded with ads & third-party trackers",
+    theranode: "100% Ad-free and no analytics",
+  },
+  {
+    feature: "Data Control",
+    competitor: "Data locked in cloud subscriptions",
+    theranode: "Complete ownership with encrypted local backups",
+  },
+  {
+    feature: "Logging Frequency",
+    competitor: "Encourages spamming entries",
+    theranode: "Mindful 1-hour cooldown for intentional reflection",
   }
 ];
 ---
@@ -44,7 +69,7 @@ const comparisons = [
         </thead>
         <tbody>
           {comparisons.map((row, i) => (
-            <tr>
+            <tr class={i > 3 ? "collapsible-row hidden-row" : ""}>
               <td class="feature-name" data-i18n={`comp.row${i + 1}.title`}>{row.feature}</td>
               <td class="theranode-cell">
                 <span class="material-symbols-outlined icon-check">check_circle</span>
@@ -58,6 +83,12 @@ const comparisons = [
           ))}
         </tbody>
       </table>
+      <div class="expand-action">
+        <button id="toggle-comparison" class="btn-outline">
+          <span class="text-more" data-i18n="comp.showMore">Show More</span>
+          <span class="text-less" data-i18n="comp.showLess" style="display: none;">Show Less</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -84,11 +115,11 @@ const comparisons = [
     box-shadow: 0 12px 40px rgba(30, 41, 59, 0.08), 0 0 0 1px rgba(144, 193, 167, 0.3);
   }
   .comparison-table { width: 100%; border-collapse: collapse; text-align: left; }
-  .comparison-table th, .comparison-table td { padding: 24px 32px; border-bottom: 1px solid var(--card-border); }
-  .comparison-table th { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+  .comparison-table th, .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--card-border); }
+  .comparison-table th { font-size: 14px; font-weight: 700; color: var(--text-primary); }
   
   .feature-col { width: 20%; }
-  .competitor-col { width: 40%; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px !important; }
+  .competitor-col { width: 40%; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 12px !important; }
   .theranode-col { 
     width: 40%; 
     background: rgba(144,193,167,0.1); 
@@ -97,21 +128,21 @@ const comparisons = [
   }
   .brand { color: var(--primary-dark); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; text-transform: none; }
   
-  .feature-name { font-weight: 700; color: var(--text-primary); font-size: 15px; }
-  .competitor-cell { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+  .feature-name { font-weight: 700; color: var(--text-primary); font-size: 13px; }
+  .competitor-cell { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
   .theranode-cell { 
     background: rgba(144,193,167,0.05); 
     border-left: 2px solid var(--sage-200); 
     border-right: 2px solid var(--sage-200); 
     color: var(--text-primary); 
-    font-size: 15px; 
+    font-size: 13px; 
     line-height: 1.6; 
     font-weight: 500; 
   }
   tr:last-child td { border-bottom: none; }
   
-  .icon-close { color: #e11d48; font-size: 22px; vertical-align: text-bottom; margin-right: 8px; font-variation-settings: 'FILL' 1; }
-  .icon-check { color: #10b981; font-size: 24px; vertical-align: text-bottom; margin-right: 8px; font-variation-settings: 'FILL' 1; }
+  .icon-close { color: #e11d48; font-size: 18px; vertical-align: text-bottom; margin-right: 8px; font-variation-settings: 'FILL' 1; }
+  .icon-check { color: #10b981; font-size: 20px; vertical-align: text-bottom; margin-right: 8px; font-variation-settings: 'FILL' 1; }
   
   @media (max-width: 768px) {
     .table-container { border: none; box-shadow: none; background: transparent; }
@@ -123,35 +154,77 @@ const comparisons = [
       background: var(--card);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       overflow: hidden;
       box-shadow: var(--shadow-sm);
     }
-    .comparison-table td { border-bottom: none; padding: 20px 24px; }
+    .comparison-table td { border-bottom: none; padding: 8px 16px; }
     
     .feature-name { 
       background: var(--sage-50); 
-      font-size: 16px; 
-      padding: 16px 24px !important;
+      font-size: 14px; 
+      padding: 8px 16px !important;
       border-bottom: 1px solid var(--card-border) !important;
       color: var(--primary-dark);
     }
     .theranode-cell { 
-      position: relative; padding-top: 36px !important; 
+      position: relative; padding-top: 24px !important; 
       background: rgba(144,193,167,0.1); 
       border: none !important; 
       border-bottom: 1px solid var(--card-border) !important;
     }
     .theranode-cell::before { 
       content: "TheraNode"; 
-      position: absolute; top: 16px; left: 24px;
-      font-size: 12px; font-weight: 800; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.05em;
+      position: absolute; top: 6px; left: 16px;
+      font-size: 10px; font-weight: 800; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.05em;
     }
-    .competitor-cell { position: relative; padding-top: 36px !important; border-bottom: none !important; }
+    .competitor-cell { position: relative; padding-top: 24px !important; border-bottom: none !important; }
     .competitor-cell::before { 
       content: "Standard Wellness Apps"; 
-      position: absolute; top: 16px; left: 24px;
-      font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
+      position: absolute; top: 6px; left: 16px;
+      font-size: 9px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
     }
   }
+
+  .hidden-row { display: none !important; }
+  .expand-action { text-align: center; padding: 12px; border-top: 1px solid var(--card-border); }
+  .btn-outline { 
+    background: transparent; border: 2px solid var(--sage-300); color: var(--primary-dark); 
+    padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s ease;
+  }
+  .btn-outline:hover { 
+    background: var(--sage-100); border-color: var(--primary-main); 
+    transform: translateY(-2px); box-shadow: 0 4px 12px rgba(144, 193, 167, 0.4);
+  }
+  .btn-outline:active {
+    transform: translateY(0); box-shadow: 0 2px 6px rgba(144, 193, 167, 0.4);
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('toggle-comparison');
+    const rows = document.querySelectorAll('.collapsible-row');
+    const textMore = btn?.querySelector('.text-more');
+    const textLess = btn?.querySelector('.text-less');
+    let isExpanded = false;
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        rows.forEach(row => {
+          if (isExpanded) {
+            row.classList.remove('hidden-row');
+          } else {
+            row.classList.add('hidden-row');
+          }
+        });
+        
+        if (textMore && textLess) {
+          textMore.style.display = isExpanded ? 'none' : 'inline';
+          textLess.style.display = isExpanded ? 'inline' : 'none';
+        }
+      });
+    }
+  });
+</script>

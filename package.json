@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "check-i18n": "node check-translations.js",
+    "build": "npm run check-i18n && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
