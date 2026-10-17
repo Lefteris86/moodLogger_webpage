@@ -11,7 +11,7 @@ import Footer from '../components/Footer.astro';
       <article class="privacy-content reveal">
 
         <h1>Privacy Policy</h1>
-        <p class="meta">Effective Date: May 5, 2026 &middot; Last Updated: May 2026</p>
+        <p class="meta">Effective Date: May 5, 2026 &middot; Last Updated: October 2026</p>
 
         <hr />
 
@@ -20,7 +20,7 @@ import Footer from '../components/Footer.astro';
           <p>TheraNode ("the App") is a personal mental wellness companion developed by Eleftherios Kostoulas. This Privacy Policy explains how the App handles your information.</p>
           <div class="callout">
             <span class="material-symbols-outlined">info</span>
-            <p><strong>The short version:</strong> TheraNode stores all data locally on your device. We do not collect, transmit, or have access to any of your personal information. We have no servers, no accounts, and no analytics.</p>
+            <p><strong>The short version:</strong> TheraNode stores all data locally on your device. We do not collect, transmit, or have access to any of your personal information. We have no servers, no accounts, and no analytics. Everything you log stays on your device — the only information that ever leaves it is an anonymous purchase receipt used to manage your subscription.</p>
           </div>
         </section>
 
@@ -35,7 +35,7 @@ import Footer from '../components/Footer.astro';
             <li>Crash reports (stored locally only — see Section 5)</li>
             <li>Any data through third-party analytics, advertising, or tracking SDKs</li>
           </ul>
-          <p><strong>We have no servers.</strong> There is no backend infrastructure, no cloud storage, and no network communication of any kind (other than the phone dialer for emergency calls — see Section 6).</p>
+          <p><strong>We have no servers.</strong> There is no backend infrastructure, no cloud storage, and no network communication of your wellness data. Everything you log stays on your device. The only information that ever leaves it is anonymous subscription purchase data, handled by Google Play Billing and RevenueCat for payment purposes only (see Section 11); emergency calls use the phone dialer (see Section 6).</p>
         </section>
 
         <section>
@@ -50,7 +50,7 @@ import Footer from '../components/Footer.astro';
                 <tr><td>Daily wellness logs</td><td>Core tracking functionality</td><td>✅ AES-256-CBC encrypted</td></tr>
                 <tr><td>Personal notes</td><td>User-entered reflections</td><td>✅ AES-256-CBC encrypted</td></tr>
                 <tr><td>User profile</td><td>Personalization and crisis nudge</td><td>✅ AES-256-CBC encrypted</td></tr>
-                <tr><td>PIN</td><td>App access authentication</td><td>✅ SHA-256 hashed with salt</td></tr>
+                <tr><td>PIN</td><td>App access authentication</td><td>✅ Device secure storage</td></tr>
                 <tr><td>Security question</td><td>Account recovery</td><td>✅ Platform secure storage</td></tr>
               </tbody>
             </table>
@@ -60,8 +60,8 @@ import Footer from '../components/Footer.astro';
 
         <section>
           <h2>4. Data Security</h2>
-          <p>All wellness data is encrypted at rest using <strong>AES-256-CBC</strong> with a unique encryption key stored in your device's secure hardware enclave (Android Keystore or iOS Keychain). Your PIN is never stored in plain text — it is hashed using SHA-256 with a unique per-user salt.</p>
-          <p>The App includes brute-force protection with exponential lockout after failed PIN attempts.</p>
+          <p>All wellness data is encrypted at rest using <strong>AES-256-CBC</strong> with a unique encryption key stored in your device's secure hardware enclave (Android Keystore or iOS Keychain). Your PIN is kept in your device's secure storage (Android Keystore or iOS Keychain), never in a regular file.</p>
+          <p>After 5 incorrect PIN attempts, PIN entry locks for 60 seconds.</p>
         </section>
 
         <section>
@@ -72,13 +72,21 @@ import Footer from '../components/Footer.astro';
 
         <section>
           <h2>6. Permissions</h2>
-          <p>The App requests one permission:</p>
+          <p>The App requests the following permissions:</p>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr><th>Permission</th><th>Purpose</th></tr>
               </thead>
               <tbody>
+                <tr>
+                  <td><code>POST_NOTIFICATIONS</code> (Android 13+)</td>
+                  <td>Used only to show the optional daily reminder notifications, which are generated locally on your device. You can decline it and keep using the App.</td>
+                </tr>
+                <tr>
+                  <td><code>RECEIVE_BOOT_COMPLETED</code> (Android only)</td>
+                  <td>Used only to restore your scheduled daily reminders after the device restarts. No data is collected.</td>
+                </tr>
                 <tr>
                   <td><code>READ_PHONE_STATE</code> (Android only)</td>
                   <td>Used exclusively to verify cellular connectivity before offering emergency call buttons. <strong>We do not read, store, or transmit your phone number, IMEI, SIM information, or call history.</strong></td>
@@ -105,7 +113,7 @@ import Footer from '../components/Footer.astro';
           <ul>
             <li><strong>Export a PDF report</strong> — Generated locally, shared via your device's share sheet</li>
             <li><strong>Export raw JSON data</strong> — Generated locally, shared via your device's share sheet</li>
-            <li><strong>Create an encrypted backup</strong> — Protected with a password you choose</li>
+            <li><strong>Create an encrypted backup</strong> — Protected with your app PIN</li>
           </ul>
           <p>All exports are generated on-device. We never receive copies of your exports.</p>
         </section>
@@ -134,7 +142,7 @@ import Footer from '../components/Footer.astro';
                 <tr><th>Service</th><th>Purpose</th><th>Data Accessed</th></tr>
               </thead>
               <tbody>
-                <tr><td><strong>Google Play Billing</strong></td><td>Processes subscription payments (Monthly €6.99 / Yearly €54.99)</td><td>Purchase history, payment status (managed by Google)</td></tr>
+                <tr><td><strong>Google Play Billing</strong></td><td>Processes subscription payments (monthly and yearly plans; current prices are shown in the App and on Google Play)</td><td>Purchase history, payment status (managed by Google)</td></tr>
                 <tr><td><strong>RevenueCat</strong></td><td>Validates purchase receipts and manages subscription entitlements</td><td>Anonymous app user ID, purchase receipts (no wellness data)</td></tr>
               </tbody>
             </table>
@@ -170,9 +178,9 @@ import Footer from '../components/Footer.astro';
               </thead>
               <tbody>
                 <tr><td>Do you collect any personal data?</td><td><strong>No</strong></td></tr>
-                <tr><td>Do you transmit data to any server?</td><td><strong>No</strong></td></tr>
+                <tr><td>Do you transmit data to any server?</td><td><strong>Not your wellness data — only anonymous subscription purchase receipts (Google Play Billing / RevenueCat)</strong></td></tr>
                 <tr><td>Do you use analytics or tracking?</td><td><strong>No</strong></td></tr>
-                <tr><td>Do you share data with third parties?</td><td><strong>No</strong></td></tr>
+                <tr><td>Do you share data with third parties?</td><td><strong>No wellness data — only subscription purchase receipts, via Google Play Billing / RevenueCat</strong></td></tr>
                 <tr><td>Is stored data encrypted?</td><td><strong>Yes — AES-256-CBC</strong></td></tr>
                 <tr><td>Can you access my data?</td><td><strong>No — we have no servers</strong></td></tr>
                 <tr><td>How do I delete my data?</td><td><strong>Uninstall the app or clear app data</strong></td></tr>
